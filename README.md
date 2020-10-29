@@ -5,6 +5,8 @@ Golang Leetcode 刷题
 - [树](./tree.md)
 - [数组](./array.md)
 - [哈希表](./hashtable.md)
+- [递归](./recursion.md)
+- [未分类](./normal.md)
 
 ## License
 
