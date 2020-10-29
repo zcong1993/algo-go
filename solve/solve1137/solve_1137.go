@@ -19,7 +19,7 @@ func Tribonacci(n int) int {
 		return 1
 	}
 	prev3, prev2, prev1 := 0, 1, 1
-	for i := 2; i < n; i++ {
+	for i := 3; i <= n; i++ {
 		prev3, prev2, prev1 = prev2, prev1, prev1+prev2+prev3
 	}
 	return prev1
