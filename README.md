@@ -1,10 +1,12 @@
 # algo-go
 
-<!--
-[![Go Report Card](https://goreportcard.com/badge/github.com/zcong1993/algo-go)](https://goreportcard.com/report/github.com/zcong1993/algo-go)
--->
+![Go](https://github.com/zcong1993/algo-go/workflows/Go/badge.svg)
 
-> my go grpc project
+Golang Leetcode 刷题
+
+- [树](./tree.md)
+- [数组](./array.md)
+- [哈希表](./hashtable.md)
 
 ## License
 
