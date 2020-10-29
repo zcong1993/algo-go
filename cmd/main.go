@@ -90,6 +90,9 @@ func main() {
 	}
 	tagMetas := make(TagMetas, 0)
 	for _, fp := range files {
+		if strings.HasSuffix(fp, "test.go") {
+			continue
+		}
 		content, err := ioutil.ReadFile(fp)
 		if err != nil {
 			log.Fatal(err)
@@ -102,13 +105,12 @@ func main() {
 		if !fileExists(fp) {
 			continue
 		}
-		content, err := ioutil.ReadFile("tree.md")
+		content, err := ioutil.ReadFile(fp)
 		if err != nil {
 			log.Fatal(err)
 		}
 		table := genTable(metas)
 		contents := strings.Split(string(content), "<!--- table -->")
-		fmt.Println(table)
 		contents[1] = "<!--- table -->\n" + table
 		newContent := strings.Join(contents, "")
 		ioutil.WriteFile(fp, []byte(newContent), 0644)
