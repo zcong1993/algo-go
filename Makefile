@@ -7,7 +7,7 @@ format:
 .PHONY: format
 
 gen:
-	go run cmd/main.go
+	go run cmd/update/main.go
 .PHONY: gen
 
 update: gen format
