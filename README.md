@@ -1,6 +1,4 @@
-# algo-go
-
-![Go](https://github.com/zcong1993/algo-go/workflows/Go/badge.svg)
+# algo-go ![Go](https://github.com/zcong1993/algo-go/workflows/Go/badge.svg)
 
 Golang Leetcode 刷题
 
