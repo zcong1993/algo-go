@@ -1,4 +1,4 @@
-package main
+package update
 
 import (
 	"bytes"
@@ -83,7 +83,7 @@ func fileExists(path string) bool {
 	return !os.IsNotExist(err)
 }
 
-func main() {
+func Run() {
 	files, err := doublestar.Glob("./solve/**/**.go")
 	if err != nil {
 		log.Fatal(err)

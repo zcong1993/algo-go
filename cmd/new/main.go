@@ -1,7 +1,6 @@
-package main
+package new
 
 import (
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -19,13 +18,7 @@ func fileExists(path string) bool {
 	return !os.IsNotExist(err)
 }
 
-func main() {
-	flag.Parse()
-	args := flag.Args()
-	if len(args) < 1 {
-		log.Fatal("no leetcode number")
-	}
-	number := args[0]
+func Run(number string) {
 	folderName := prefix + number
 	fp := filepath.Join(folder, folderName)
 	if fileExists(fp) {
