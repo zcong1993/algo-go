@@ -20,7 +20,7 @@ type Meta struct {
 
 var (
 	difficultyMap = map[string]string{
-		"Eazy":   "简单",
+		"Easy":   "简单",
 		"Medium": "中等",
 		"Hard":   "困难",
 	}
