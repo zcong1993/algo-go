@@ -4,7 +4,7 @@ package solve0001
 @index 1
 @title 两数之和
 @difficulty 简单
-@tags array,hashtable
+@tags array,hash-table
 @draft false
 @link https://leetcode-cn.com/problems/two-sum
 */

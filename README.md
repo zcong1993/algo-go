@@ -10,9 +10,9 @@ Golang Leetcode 刷题
 
 - [树](./tree.md)
 - [数组](./array.md)
-- [哈希表](./hashtable.md)
+- [哈希表](hash-table.md)
 - [递归](./recursion.md)
-- [DFS](./dfs.md)
+- [DFS](depth-first-search.md)
 - [未分类](./normal.md)
 
 ## License

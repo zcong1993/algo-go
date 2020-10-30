@@ -1,11 +1,16 @@
 package new
 
 import (
+	"bytes"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
+	"text/template"
+
+	"github.com/zcong1993/algo-go/pkg/leetcode"
 )
 
 const (
@@ -13,13 +18,28 @@ const (
 	prefix = "solve"
 )
 
+var codeTpl = template.Must(template.New("code").Parse(codeStr))
+
 func fileExists(path string) bool {
 	_, err := os.Stat(path)
 	return !os.IsNotExist(err)
 }
 
+func normalizeNumber(number string) string {
+	if len(number) >= 4 {
+		return number
+	}
+	return strings.Repeat("0", 4-len(number)) + number
+}
+
+type MetaWithFolder struct {
+	leetcode.Meta
+	Folder string
+	TagStr string
+}
+
 func Run(number string) {
-	folderName := prefix + number
+	folderName := prefix + normalizeNumber(number)
 	fp := filepath.Join(folder, folderName)
 	if fileExists(fp) {
 		log.Fatalf("path %s exists", fp)
@@ -27,8 +47,22 @@ func Run(number string) {
 	os.MkdirAll(fp, 0755)
 	codeFp := filepath.Join(fp, fmt.Sprintf("solve_%s.go", number))
 	codeTestFp := filepath.Join(fp, fmt.Sprintf("solve_%s_test.go", number))
+	meta, err := leetcode.GetMetaByNumber(number)
+	if err != nil || meta == nil {
+		log.Fatal(err, meta)
+	}
+	metaf := &MetaWithFolder{
+		*meta,
+		folderName,
+		strings.Join(meta.Tags, ","),
+	}
+	var codeContent bytes.Buffer
+	err = codeTpl.Execute(&codeContent, metaf)
+	if err != nil {
+		log.Fatal(err)
+	}
 	if !fileExists(codeFp) {
-		ioutil.WriteFile(codeFp, []byte(fmt.Sprintf(codeStr, folderName)), 0644)
+		ioutil.WriteFile(codeFp, codeContent.Bytes(), 0644)
 	}
 
 	if !fileExists(codeTestFp) {
@@ -36,15 +70,15 @@ func Run(number string) {
 	}
 }
 
-var codeStr = `package %s
+var codeStr = `package {{ .Folder }}
 
 /**
-@index
-@title
-@difficulty 简单
-@tags normal
+@index {{ .Index }}
+@title {{ .Title }}
+@difficulty {{ .Difficulty }}
+@tags {{ .TagStr }}
 @draft false
-@link
+@link {{ .Link }}
 */
 func solve() {
 

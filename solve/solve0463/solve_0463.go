@@ -4,7 +4,7 @@ package solve0463
 @index 463
 @title 岛屿的周长
 @difficulty 简单
-@tags dfs
+@tags depth-first-search
 @draft false
 @link https://leetcode-cn.com/problems/island-perimeter
 */
