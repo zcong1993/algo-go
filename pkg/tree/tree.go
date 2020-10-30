@@ -113,11 +113,14 @@ func Deserialize(str string) *TreeNode {
 
 // 判断两棵树是否相同
 func IsSameTree(root1, root2 *TreeNode) bool {
+	// 两树都为空, true
 	if root1 == nil && root2 == nil {
 		return true
 	}
+	// 一个节点为空, 或者两个节点值不相同, false
 	if root1 == nil || root2 == nil || root1.Val != root2.Val {
 		return false
 	}
+	// 递归对比左子树和右子树
 	return IsSameTree(root1.Left, root2.Left) && IsSameTree(root1.Right, root2.Right)
 }
