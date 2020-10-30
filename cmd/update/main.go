@@ -48,6 +48,7 @@ func addMeta(tagMetas TagMetas, meta *Meta) {
 		}
 		tagMetas[tag] = append(tagMetas[tag], meta)
 	}
+	tagMetas["all"] = append(tagMetas["all"], meta)
 }
 
 func findTag(content []byte, r *regexp.Regexp) string {
@@ -89,6 +90,7 @@ func Run() {
 		log.Fatal(err)
 	}
 	tagMetas := make(TagMetas, 0)
+	tagMetas["all"] = make([]*Meta, 0)
 	for _, fp := range files {
 		if strings.HasSuffix(fp, "test.go") {
 			continue

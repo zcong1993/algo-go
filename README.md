@@ -2,6 +2,12 @@
 
 Golang Leetcode 刷题
 
+### 汇总
+
+[汇总](./all.md)
+
+### 分类
+
 - [树](./tree.md)
 - [数组](./array.md)
 - [哈希表](./hashtable.md)
