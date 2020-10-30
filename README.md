@@ -12,6 +12,7 @@ Golang Leetcode 刷题
 - [数组](./array.md)
 - [哈希表](hash-table.md)
 - [递归](./recursion.md)
+- [BFS](./breadth-first-search.md)
 - [DFS](depth-first-search.md)
 - [未分类](./normal.md)
 
