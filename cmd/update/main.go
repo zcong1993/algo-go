@@ -36,6 +36,11 @@ type Meta struct {
 	Link       string
 }
 
+type TableData struct {
+	Metas []*Meta
+	Total int
+}
+
 type TagMetas map[string]([]*Meta)
 
 func addMeta(tagMetas TagMetas, meta *Meta) {
@@ -73,9 +78,9 @@ func findMeta(content []byte, fp string) *Meta {
 	}
 }
 
-func genTable(metas []*Meta) string {
+func genTable(data *TableData) string {
 	var bf bytes.Buffer
-	tableTpl.Execute(&bf, metas)
+	tableTpl.Execute(&bf, data)
 	return bf.String()
 }
 
@@ -111,7 +116,10 @@ func Run() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		table := genTable(metas)
+		table := genTable(&TableData{
+			Metas: metas,
+			Total: len(metas),
+		})
 		contents := strings.Split(string(content), "<!--- table -->")
 		contents[1] = "<!--- table -->\n" + table
 		newContent := strings.Join(contents, "")
@@ -120,7 +128,10 @@ func Run() {
 }
 
 var tableStr = `
+
+总计: {{ .Total }}
+
 | 序号 | 难度 | 题目                    | 解答                      |
-| ---- | ---- | ------------------ | ---------------- |{{ range . }}
+| ---- | ---- | ------------------ | ---------------- |{{ range .Metas }}
 | {{ .Index }} | {{ .Difficulty }} | [{{ .Title }}]({{ .Link }}) | [{{ .Fp }}]({{ .Fp }})|{{ end }}
 `
