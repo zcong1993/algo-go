@@ -4,20 +4,20 @@ Golang Leetcode 刷题
 
 ### 汇总
 
-[汇总](./all.md)
+[汇总](./toc/all.md)
 
 ### 分类
 
-- [树](./tree.md)
-- [数组](./array.md)
-- [哈希表](hash-table.md)
-- [递归](./recursion.md)
-- [BFS](./breadth-first-search.md)
-- [DFS](depth-first-search.md)
-- [排序](./sort.md)
-- [双指针](./two-pointers.md)
-- [二分搜索](./binary-search.md)
-- [未分类](./normal.md)
+- [树](./toc/tree.md)
+- [数组](./toc/array.md)
+- [哈希表](./toc/hash-table.md)
+- [递归](./toc/recursion.md)
+- [BFS](./toc/breadth-first-search.md)
+- [DFS](./toc/depth-first-search.md)
+- [排序](./toc/sort.md)
+- [双指针](./toc/two-pointers.md)
+- [二分搜索](./toc/binary-search.md)
+- [未分类](./toc/normal.md)
 
 ## License
 

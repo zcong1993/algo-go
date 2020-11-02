@@ -121,7 +121,7 @@ func Run() {
 		addMeta(tagMetas, meta)
 	}
 	for tag, metas := range tagMetas {
-		fp := fmt.Sprintf("%s.md", tag)
+		fp := fmt.Sprintf("./toc/%s.md", tag)
 		if !fileExists(fp) {
 			continue
 		}
