@@ -14,6 +14,9 @@ Golang Leetcode 刷题
 - [递归](./recursion.md)
 - [BFS](./breadth-first-search.md)
 - [DFS](depth-first-search.md)
+- [排序](./sort.md)
+- [双指针](./two-pointers.md)
+- [二分搜索](./binary-search.md)
 - [未分类](./normal.md)
 
 ## License

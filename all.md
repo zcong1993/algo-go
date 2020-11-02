@@ -2,12 +2,13 @@
 
 <!--- table -->
 
-总计: 9
+总计: 10
 
 | 序号   | 难度 | 题目                                                                                                   | 解答                                                                 |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
 | 1      | 简单 | [两数之和](https://leetcode-cn.com/problems/two-sum)                                                   | [solve/solve0001/solve_0001.go](solve/solve0001/solve_0001.go)       |
 | 102    | 中等 | [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)                | [solve/solve0102/solve_102.go](solve/solve0102/solve_102.go)         |
+| 349    | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                         | [solve/solve0349/solve_349.go](solve/solve0349/solve_349.go)         |
 | 449    | 中等 | [序列化和反序列化二叉搜索树](https://leetcode-cn.com/problems/serialize-and-deserialize-bst/)          | [solve/solve0449/solve_449.go](solve/solve0449/solve_449.go)         |
 | 463    | 简单 | [岛屿的周长](https://leetcode-cn.com/problems/island-perimeter)                                        | [solve/solve0463/solve_0463.go](solve/solve0463/solve_0463.go)       |
 | 538    | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)               | [solve/solve0538/solve_0538.go](solve/solve0538/solve_0538.go)       |
