@@ -8,6 +8,8 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/bmatcuk/doublestar/v2"
@@ -36,12 +38,22 @@ type Meta struct {
 	Link       string
 }
 
+type Metas []*Meta
+
+func (a Metas) Len() int      { return len(a) }
+func (a Metas) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
+func (a Metas) Less(i, j int) bool {
+	iIndex, _ := strconv.Atoi(a[i].Index)
+	jIndex, _ := strconv.Atoi(a[j].Index)
+	return iIndex < jIndex
+}
+
 type TableData struct {
-	Metas []*Meta
+	Metas Metas
 	Total int
 }
 
-type TagMetas map[string]([]*Meta)
+type TagMetas map[string](Metas)
 
 func addMeta(tagMetas TagMetas, meta *Meta) {
 	if meta == nil {
@@ -49,7 +61,7 @@ func addMeta(tagMetas TagMetas, meta *Meta) {
 	}
 	for _, tag := range meta.Tags {
 		if _, ok := tagMetas[tag]; !ok {
-			tagMetas[tag] = make([]*Meta, 0)
+			tagMetas[tag] = make(Metas, 0)
 		}
 		tagMetas[tag] = append(tagMetas[tag], meta)
 	}
@@ -80,6 +92,7 @@ func findMeta(content []byte, fp string) *Meta {
 
 func genTable(data *TableData) string {
 	var bf bytes.Buffer
+	sort.Sort(data.Metas)
 	tableTpl.Execute(&bf, data)
 	return bf.String()
 }
@@ -95,7 +108,7 @@ func Run() {
 		log.Fatal(err)
 	}
 	tagMetas := make(TagMetas, 0)
-	tagMetas["all"] = make([]*Meta, 0)
+	tagMetas["all"] = make(Metas, 0)
 	for _, fp := range files {
 		if strings.HasSuffix(fp, "test.go") {
 			continue
