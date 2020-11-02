@@ -38,7 +38,12 @@ type MetaWithFolder struct {
 	TagStr string
 }
 
-func Run(number string) {
+func Run(n string) {
+	meta, err := leetcode.GetMetaByNumber(n)
+	if err != nil || meta == nil {
+		log.Fatal(err, meta)
+	}
+	number := meta.Index
 	folderName := prefix + normalizeNumber(number)
 	fp := filepath.Join(folder, folderName)
 	if fileExists(fp) {
@@ -47,10 +52,6 @@ func Run(number string) {
 	os.MkdirAll(fp, 0755)
 	codeFp := filepath.Join(fp, fmt.Sprintf("solve_%s.go", number))
 	codeTestFp := filepath.Join(fp, fmt.Sprintf("solve_%s_test.go", number))
-	meta, err := leetcode.GetMetaByNumber(number)
-	if err != nil || meta == nil {
-		log.Fatal(err, meta)
-	}
 	metaf := &MetaWithFolder{
 		*meta,
 		folderName,
