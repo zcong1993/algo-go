@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 12
+总计: 13
 
 | 序号    | 难度 | 题目                                                                                                                          | 解答                                                                          |
 | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -15,6 +15,7 @@
 | 538     | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)                                      | [solve/solve0538/solve_0538.go](../solve/solve0538/solve_0538.go)             |
 | 563     | 简单 | [二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt)                                                             | [solve/solve0563/solve_0563.go](../solve/solve0563/solve_0563.go)             |
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                    | [solve/solve0572/solve_0572.go](../solve/solve0572/solve_0572.go)             |
+| 978     | 简单 | [有效的山脉数组](https://leetcode-cn.com/problems/valid-mountain-array/)                                                      | [solve/solve0978/solve_978.go](../solve/solve0978/solve_978.go)               |
 | 1137    | 简单 | [第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number)                                                  | [solve/solve1137/solve_1137.go](../solve/solve1137/solve_1137.go)             |
 | 100347  | 简单 | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)                        | [solve/solve100347/solve100347.go](../solve/solve100347/solve100347.go)       |
 | 1000019 | 简单 | [BiNode](https://leetcode-cn.com/problems/binode-lcci/)                                                                       | [solve/solve1000019/solve_1000019.go](../solve/solve1000019/solve_1000019.go) |
