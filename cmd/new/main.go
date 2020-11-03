@@ -18,7 +18,10 @@ const (
 	prefix = "solve"
 )
 
-var codeTpl = template.Must(template.New("code").Parse(codeStr))
+var (
+	codeTpl    = template.Must(template.New("code").Parse(codeStr))
+	problemTpl = template.Must(template.New("problem").Parse(problemStr))
+)
 
 func fileExists(path string) bool {
 	_, err := os.Stat(path)
@@ -52,11 +55,13 @@ func Run(n string) {
 	os.MkdirAll(fp, 0755)
 	codeFp := filepath.Join(fp, fmt.Sprintf("solve_%s.go", number))
 	codeTestFp := filepath.Join(fp, fmt.Sprintf("solve_%s_test.go", number))
+	problemFp := filepath.Join(fp, "problem.md")
 	metaf := &MetaWithFolder{
 		*meta,
 		folderName,
 		strings.Join(meta.Tags, ","),
 	}
+	metaf.Meta.Content = strings.ReplaceAll(metaf.Meta.Content, "↵", "")
 	var codeContent bytes.Buffer
 	err = codeTpl.Execute(&codeContent, metaf)
 	if err != nil {
@@ -65,9 +70,16 @@ func Run(n string) {
 	if !fileExists(codeFp) {
 		ioutil.WriteFile(codeFp, codeContent.Bytes(), 0644)
 	}
-
 	if !fileExists(codeTestFp) {
 		ioutil.WriteFile(codeTestFp, []byte(fmt.Sprintf(testCodeStr, folderName)), 0644)
+	}
+	var problemContent bytes.Buffer
+	err = problemTpl.Execute(&problemContent, metaf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if !fileExists(problemFp) {
+		ioutil.WriteFile(problemFp, problemContent.Bytes(), 0644)
 	}
 }
 
@@ -88,4 +100,9 @@ func solve() {
 
 var testCodeStr = `package %s
 
+`
+
+var problemStr = `# [{{ .Index }}. {{ .Title }}]({{ .Link }})
+
+{{ .Content }}
 `

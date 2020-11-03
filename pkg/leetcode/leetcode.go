@@ -16,6 +16,7 @@ type Meta struct {
 	Difficulty string
 	Tags       []string
 	Link       string
+	Content    string
 }
 
 var (
@@ -72,6 +73,7 @@ func getDetail(slug string) (*Meta, error) {
 		Difficulty: difficultyMap[gjson.GetBytes(content, "data.question.difficulty").String()],
 		Tags:       tags,
 		Link:       fmt.Sprintf("https://leetcode-cn.com/problems/%s/", gjson.GetBytes(content, "data.question.titleSlug").String()),
+		Content:    gjson.GetBytes(content, "data.question.translatedContent").String(),
 	}, nil
 }
 
