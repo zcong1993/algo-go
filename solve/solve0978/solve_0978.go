@@ -7,6 +7,7 @@ package solve0978
 @tags array
 @draft false
 @link https://leetcode-cn.com/problems/valid-mountain-array/
+@frontendId 941
 */
 func ValidMountainArray(A []int) bool {
 	if len(A) == 0 {

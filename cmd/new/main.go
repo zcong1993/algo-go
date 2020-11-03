@@ -37,8 +37,9 @@ func normalizeNumber(number string) string {
 
 type MetaWithFolder struct {
 	leetcode.Meta
-	Folder string
-	TagStr string
+	Folder     string
+	TagStr     string
+	FrontendId string
 }
 
 func Run(n string) {
@@ -46,12 +47,9 @@ func Run(n string) {
 	if err != nil || meta == nil {
 		log.Fatal(err, meta)
 	}
-	number := meta.Index
-	folderName := prefix + normalizeNumber(number)
+	number := normalizeNumber(meta.Index)
+	folderName := prefix + number
 	fp := filepath.Join(folder, folderName)
-	if fileExists(fp) {
-		log.Fatalf("path %s exists", fp)
-	}
 	os.MkdirAll(fp, 0755)
 	codeFp := filepath.Join(fp, fmt.Sprintf("solve_%s.go", number))
 	codeTestFp := filepath.Join(fp, fmt.Sprintf("solve_%s_test.go", number))
@@ -60,6 +58,7 @@ func Run(n string) {
 		*meta,
 		folderName,
 		strings.Join(meta.Tags, ","),
+		n,
 	}
 	metaf.Meta.Content = strings.ReplaceAll(metaf.Meta.Content, "↵", "")
 	var codeContent bytes.Buffer
@@ -92,6 +91,7 @@ var codeStr = `package {{ .Folder }}
 @tags {{ .TagStr }}
 @draft false
 @link {{ .Link }}
+@frontendId {{ .FrontendId }}
 */
 func solve() {
 

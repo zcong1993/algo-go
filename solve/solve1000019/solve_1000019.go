@@ -9,6 +9,7 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
 @tags tree,binary-search-tree,recursion
 @draft false
 @link https://leetcode-cn.com/problems/binode-lcci/
+@frontendId 面试题 17.12
 */
 func ConvertBiNode(root *TreeNode) *TreeNode {
 	if root == nil {

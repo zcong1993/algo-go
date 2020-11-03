@@ -9,6 +9,7 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
 @tags tree
 @draft false
 @link https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
+@frontendId 剑指 Offer 68 - II
 */
 func LowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	// 异常情况
