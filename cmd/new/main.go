@@ -80,6 +80,7 @@ func Run(n string) {
 	if !fileExists(problemFp) {
 		ioutil.WriteFile(problemFp, problemContent.Bytes(), 0644)
 	}
+	fmt.Printf("Done: %s\n", fp)
 }
 
 var codeStr = `package {{ .Folder }}

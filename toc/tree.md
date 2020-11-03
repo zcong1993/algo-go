@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 9
+总计: 10
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -13,5 +13,6 @@
 | 538     | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)                                       | [solve/solve0538](../solve/solve0538)       |
 | 563     | 简单 | [二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt)                                                              | [solve/solve0563](../solve/solve0563)       |
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                     | [solve/solve0572](../solve/solve0572)       |
+| 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
 | 100347  | 简单 | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)                         | [solve/solve100347](../solve/solve100347)   |
 | 1000019 | 简单 | [BiNode](https://leetcode-cn.com/problems/binode-lcci/)                                                                        | [solve/solve1000019](../solve/solve1000019) |
