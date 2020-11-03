@@ -28,8 +28,8 @@ func BuildTree(preorder []int, inorder []int) *TreeNode {
 		rootVal := preorder[pStart]
 		root := &TreeNode{Val: rootVal}
 		index := -1
-		for i, val := range inorder {
-			if val == rootVal {
+		for i := iStart; i <= iEnd; i++ {
+			if inorder[i] == rootVal {
 				index = i
 				break
 			}
