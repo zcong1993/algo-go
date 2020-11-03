@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strconv"
@@ -85,7 +86,7 @@ func findMeta(content []byte, fp string) *Meta {
 		Difficulty: findTag(content, difficultyRegex),
 		Tags:       tags,
 		Draft:      draft,
-		Fp:         fp,
+		Fp:         filepath.Dir(fp),
 		Link:       findTag(content, linkRegex),
 	}
 }
@@ -110,7 +111,7 @@ func Run() {
 	tagMetas := make(TagMetas, 0)
 	tagMetas["all"] = make(Metas, 0)
 	for _, fp := range files {
-		if strings.HasSuffix(fp, "test.go") {
+		if strings.HasSuffix(fp, "test.go") || !strings.HasSuffix(fp, ".go") {
 			continue
 		}
 		content, err := ioutil.ReadFile(fp)
