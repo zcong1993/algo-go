@@ -3,6 +3,9 @@ name: Go
 on:
   push:
     branches: [ master ]
+    paths:
+      - pkg
+      - solve
   pull_request:
     branches: [ master ]
 
