@@ -33,4 +33,5 @@ jobs:
       run: go test -v -coverprofile=coverage.txt -covermode=atomic ./...
     - uses: codecov/codecov-action@v1
       with:
+        file: ./coverage.txt # optional
         verbose: true # optional (default = false)
