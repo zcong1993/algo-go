@@ -17,6 +17,7 @@ Golang Leetcode 刷题
 - [排序](./toc/sort.md)
 - [双指针](./toc/two-pointers.md)
 - [二分搜索](./toc/binary-search.md)
+- [回溯](./toc/backtracking.md)
 - [未分类](./toc/normal.md)
 
 ## License
