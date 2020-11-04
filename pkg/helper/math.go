@@ -27,3 +27,19 @@ func Min(nums ...int) int {
 	}
 	return min
 }
+
+// Min2 return min num of 2 nums
+func Min2(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// Max2 return max num of 2 nums
+func Max2(a, b int) int {
+	if a < b {
+		return b
+	}
+	return a
+}
