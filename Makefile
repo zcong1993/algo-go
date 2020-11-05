@@ -7,7 +7,7 @@ format:
 .PHONY: format
 
 gen:
-	go run cmd/main.go update
+	./bin/algo-go update
 .PHONY: gen
 
 update: gen format
@@ -16,3 +16,7 @@ update: gen format
 test:
 	go test ./...
 .PHONY: test
+
+build:
+	go build -o ./bin/algo-go ./cmd/main.go
+.PHONY: build
