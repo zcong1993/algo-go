@@ -12,6 +12,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
 
 	"github.com/bmatcuk/doublestar/v2"
 )
@@ -110,35 +111,51 @@ func Run() {
 	}
 	tagMetas := make(TagMetas, 0)
 	tagMetas["all"] = make(Metas, 0)
+	wg := sync.WaitGroup{}
+	var lock sync.Mutex
 	for _, fp := range files {
 		if strings.HasSuffix(fp, "test.go") || !strings.HasSuffix(fp, ".go") {
 			continue
 		}
-		content, err := ioutil.ReadFile(fp)
-		if err != nil {
-			log.Fatal(err)
-		}
-		meta := findMeta(content, fp)
-		addMeta(tagMetas, meta)
+		wg.Add(1)
+		fp := fp
+		go func() {
+			content, err := ioutil.ReadFile(fp)
+			if err != nil {
+				log.Fatal(err)
+			}
+			meta := findMeta(content, fp)
+			lock.Lock()
+			addMeta(tagMetas, meta)
+			lock.Unlock()
+			wg.Done()
+		}()
 	}
+	wg.Wait()
 	for tag, metas := range tagMetas {
 		fp := fmt.Sprintf("./toc/%s.md", tag)
 		if !fileExists(fp) {
 			continue
 		}
-		content, err := ioutil.ReadFile(fp)
-		if err != nil {
-			log.Fatal(err)
-		}
-		table := genTable(&TableData{
-			Metas: metas,
-			Total: len(metas),
-		})
-		contents := strings.Split(string(content), "<!--- table -->")
-		contents[1] = "<!--- table -->\n" + table
-		newContent := strings.Join(contents, "")
-		ioutil.WriteFile(fp, []byte(newContent), 0644)
+		wg.Add(1)
+		metas := metas
+		go func() {
+			content, err := ioutil.ReadFile(fp)
+			if err != nil {
+				log.Fatal(err)
+			}
+			table := genTable(&TableData{
+				Metas: metas,
+				Total: len(metas),
+			})
+			contents := strings.Split(string(content), "<!--- table -->")
+			contents[1] = "<!--- table -->\n" + table
+			newContent := strings.Join(contents, "")
+			ioutil.WriteFile(fp, []byte(newContent), 0644)
+			wg.Done()
+		}()
 	}
+	wg.Wait()
 }
 
 var tableStr = `
