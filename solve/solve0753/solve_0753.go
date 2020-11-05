@@ -24,6 +24,7 @@ func openLock(deadends []string, target string) int {
 	mm[start] = struct{}{}
 	step := 0
 
+	// 状态转换图
 	nearMap := map[byte][]byte{
 		'0': {'1', '9'},
 		'1': {'0', '2'},
