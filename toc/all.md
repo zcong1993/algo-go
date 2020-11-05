@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 19
+总计: 20
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -19,6 +19,7 @@
 | 538     | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)                                       | [solve/solve0538](../solve/solve0538)       |
 | 563     | 简单 | [二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt)                                                              | [solve/solve0563](../solve/solve0563)       |
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                     | [solve/solve0572](../solve/solve0572)       |
+| 753     | 中等 | [打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)                                                                  | [solve/solve0753](../solve/solve0753)       |
 | 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
 | 978     | 简单 | [有效的山脉数组](https://leetcode-cn.com/problems/valid-mountain-array/)                                                       | [solve/solve0978](../solve/solve0978)       |
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
