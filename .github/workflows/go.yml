@@ -8,6 +8,9 @@ on:
       - solve
   pull_request:
     branches: [ master ]
+    paths:
+      - pkg
+      - solve
 
 jobs:
 
