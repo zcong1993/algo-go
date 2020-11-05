@@ -1,10 +1,12 @@
 package helper
 
+import "math"
+
 // MaxInt is max safe int
-const MaxInt = int(^uint(0) >> 1)
+const MaxInt int = math.MaxInt64
 
 // MinInt is min safe int
-const MinInt = -MaxInt - 1
+const MinInt int = math.MinInt64
 
 // Max find the biggest num of nums
 func Max(nums ...int) int {
