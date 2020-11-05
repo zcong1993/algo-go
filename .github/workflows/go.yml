@@ -4,13 +4,13 @@ on:
   push:
     branches: [ master ]
     paths:
-      - pkg
-      - solve
+      - 'pkg/**'
+      - 'solve/**'
   pull_request:
     branches: [ master ]
     paths:
-      - pkg
-      - solve
+      - 'pkg/**'
+      - 'solve/**'
 
 jobs:
 
