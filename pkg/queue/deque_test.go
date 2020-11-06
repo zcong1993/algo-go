@@ -46,4 +46,5 @@ func TestDeQueue(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, num, 0)
 	assert.Equal(t, 0, q.Size())
+	q.AddLast(1)
 }

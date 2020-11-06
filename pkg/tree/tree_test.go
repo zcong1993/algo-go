@@ -40,6 +40,8 @@ func TestDeserialize(t *testing.T) {
 	str := Serialize(root)
 	deTree := Deserialize(str)
 	assert.True(t, IsSameTree(root, deTree))
+
+	assert.Nil(t, Deserialize(Serialize(nil)))
 }
 
 func TestTraversal(t *testing.T) {
@@ -47,4 +49,5 @@ func TestTraversal(t *testing.T) {
 	assert.Equal(t, []int{0, 1, 3, 2, 4}, Traversal(root, PREORDER))
 	assert.Equal(t, []int{3, 1, 0, 4, 2}, Traversal(root, INORDER))
 	assert.Equal(t, []int{3, 1, 4, 2, 0}, Traversal(root, POSTORDER))
+	assert.Equal(t, []int{}, Traversal(nil, PREORDER))
 }

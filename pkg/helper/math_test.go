@@ -16,8 +16,10 @@ func TestMin(t *testing.T) {
 
 func TestMin2(t *testing.T) {
 	assert.Equal(t, -1, Min2(-1, 0))
+	assert.Equal(t, -1, Min2(0, -1))
 }
 
 func TestMax2(t *testing.T) {
 	assert.Equal(t, 0, Max2(-1, 0))
+	assert.Equal(t, 0, Max2(0, -1))
 }
