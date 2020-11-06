@@ -15,3 +15,24 @@ func GridFromJSON(input string) [][]int {
 	_ = json.Unmarshal([]byte(input), &grid)
 	return grid
 }
+
+// StringBoardFromJSON json str -> [][]int
+func StringBoardFromJSON(input string) [][]string {
+	var board [][]string
+	_ = json.Unmarshal([]byte(input), &board)
+	return board
+}
+
+// CharBoardFromJSON json str -> [][]byte
+func CharBoardFromJSON(input string) [][]byte {
+	board := StringBoardFromJSON(input)
+	res := make([][]byte, len(board))
+	for j, line := range board {
+		l := make([]byte, len(line))
+		for i, str := range line {
+			l[i] = str[0]
+		}
+		res[j] = l
+	}
+	return res
+}

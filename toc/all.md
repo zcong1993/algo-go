@@ -2,12 +2,13 @@
 
 <!--- table -->
 
-总计: 21
+总计: 22
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
 | 1       | 简单 | [两数之和](https://leetcode-cn.com/problems/two-sum)                                                                           | [solve/solve0001](../solve/solve0001)       |
 | 22      | 中等 | [括号生成](https://leetcode-cn.com/problems/generate-parentheses/)                                                             | [solve/solve0022](../solve/solve0022)       |
+| 37      | 困难 | [解数独](https://leetcode-cn.com/problems/sudoku-solver/)                                                                      | [solve/solve0037](../solve/solve0037)       |
 | 57      | 困难 | [插入区间](https://leetcode-cn.com/problems/insert-interval/)                                                                  | [solve/solve0057](../solve/solve0057)       |
 | 102     | 中等 | [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)                                        | [solve/solve0102](../solve/solve0102)       |
 | 105     | 中等 | [从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | [solve/solve0105](../solve/solve0105)       |
