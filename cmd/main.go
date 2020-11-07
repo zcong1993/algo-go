@@ -5,6 +5,8 @@ import (
 	"log"
 	"os"
 
+	"github.com/zcong1993/algo-go/cmd/tags"
+
 	"github.com/zcong1993/algo-go/pkg/leetcode"
 
 	"github.com/zcong1993/algo-go/cmd/new"
@@ -22,6 +24,8 @@ var (
 
 	metaCmd    = app.Command("meta", "Show problem meta by number.")
 	metaNumber = metaCmd.Arg("number", "problem number").Required().String()
+
+	tagsCmd = app.Command("tags", "Update tag toc files.")
 )
 
 func showMeta(number string) {
@@ -41,5 +45,7 @@ func main() {
 		new.Run(*number)
 	case metaCmd.FullCommand():
 		showMeta(*metaNumber)
+	case tagsCmd.FullCommand():
+		tags.Run()
 	}
 }

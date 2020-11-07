@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -17,6 +18,12 @@ type Meta struct {
 	Tags       []string
 	Link       string
 	Content    string
+}
+
+type Tag struct {
+	Name           string `json:"name"`
+	Slug           string `json:"slug"`
+	TranslatedName string `json:"translatedName"`
 }
 
 var (
@@ -84,4 +91,19 @@ func GetMetaByNumber(number string) (*Meta, error) {
 	}
 	slug := findPloblemSlugByNumber(ploblems, number)
 	return getDetail(slug)
+}
+
+func GetTags() ([]Tag, error) {
+	resp, err := http.Get("https://leetcode-cn.com/problems/api/tags/")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	bt, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	res := make([]Tag, 0)
+	err = json.Unmarshal([]byte(gjson.GetBytes(bt, "topics").Raw), &res)
+	return res, err
 }

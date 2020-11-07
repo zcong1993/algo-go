@@ -1,0 +1,3 @@
+# Rejection Sampling
+
+<!--- table -->
