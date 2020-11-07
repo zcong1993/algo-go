@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 24
+总计: 25
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -16,6 +16,7 @@
 | 105     | 中等 | [从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | [solve/solve0105](../solve/solve0105)       |
 | 106     | 中等 | [从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | [solve/solve0106](../solve/solve0106)       |
 | 127     | 中等 | [单词接龙](https://leetcode-cn.com/problems/word-ladder/)                                                                      | [solve/solve0127](../solve/solve0127)       |
+| 327     | 困难 | [区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/)                                                           | [solve/solve0327](../solve/solve0327)       |
 | 349     | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                                                 | [solve/solve0349](../solve/solve0349)       |
 | 449     | 中等 | [序列化和反序列化二叉搜索树](https://leetcode-cn.com/problems/serialize-and-deserialize-bst/)                                  | [solve/solve0449](../solve/solve0449)       |
 | 463     | 简单 | [岛屿的周长](https://leetcode-cn.com/problems/island-perimeter)                                                                | [solve/solve0463](../solve/solve0463)       |

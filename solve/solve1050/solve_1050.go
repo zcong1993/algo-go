@@ -5,8 +5,9 @@ import (
 
 	. "github.com/zcong1993/algo-go/pkg/tree"
 	"github.com/zcong1993/algo-go/solve/solve0105"
+
+	. "github.com/zcong1993/algo-go/pkg/helper"
 )
-import . "github.com/zcong1993/algo-go/pkg/helper"
 
 /**
 @index 1050
