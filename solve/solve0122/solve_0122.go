@@ -58,12 +58,12 @@ func maxProfitDpOptim(prices []int) int {
 	if n <= 1 {
 		return 0
 	}
-	dp_prev_0, dp_prev_1 := 0, -prices[0]
+	dpPrev0, dpPrev1 := 0, -prices[0]
 	for i := 1; i < n; i++ {
-		dp_prev_0 = helper.Max2(dp_prev_0, dp_prev_1+prices[i])
-		dp_prev_1 = helper.Max2(dp_prev_1, dp_prev_0-prices[i])
+		dpPrev0 = helper.Max2(dpPrev0, dpPrev1+prices[i])
+		dpPrev1 = helper.Max2(dpPrev1, dpPrev0-prices[i])
 	}
-	return dp_prev_0
+	return dpPrev0
 }
 
 func MaxProfit(prices []int) int {
