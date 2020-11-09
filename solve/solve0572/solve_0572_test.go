@@ -15,4 +15,6 @@ func TestIsSubtree(t *testing.T) {
 	s2 := tree.Deserialize("3,4,1,#,#,2,0,#,#,#,5,#,#")
 	t2 := tree.Deserialize("4,1,#,#,2,#,#")
 	assert.False(t, IsSubtree(s2, t2))
+
+	assert.True(t, IsSubtree(nil, nil))
 }

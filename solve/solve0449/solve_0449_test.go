@@ -14,6 +14,7 @@ func TestSerialize(t *testing.T) {
 	root.Right = &tree.TreeNode{Val: 2}
 	root.Left.Left = &tree.TreeNode{Val: 3}
 	assert.Equal(t, "0,1,3,#,#,#,2,#,#", c.serialize(root))
+	assert.Equal(t, tree.EMPTY, c.serialize(nil))
 }
 
 func TestDeserialize(t *testing.T) {
@@ -26,4 +27,6 @@ func TestDeserialize(t *testing.T) {
 	str := c.serialize(root)
 	deTree := c.deserialize(str)
 	assert.True(t, tree.IsSameTree(root, deTree))
+	assert.Nil(t, c.deserialize(""))
+	assert.Nil(t, c.deserialize(tree.EMPTY))
 }
