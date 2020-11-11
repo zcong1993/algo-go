@@ -1,5 +1,7 @@
 package solve100304
 
+import . "github.com/zcong1993/algo-go/pkg/helper"
+
 /**
 @index 100304
 @title 连续子数组的最大和
@@ -30,6 +32,45 @@ func maxSubArray(nums []int) int {
 	return maxSum
 }
 
+func maxSubArrayDp(nums []int) int {
+	maxSum := nums[0]
+	// dp[i] 表示以 i 结尾的最大子数组和
+	dp := make([]int, len(nums))
+	dp[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		// dp[i] = max(加上当前元素, 以当前元素开始忽略之前的元素序列)
+		// 可以看到 dp[i] 只和 dp[i-1] 有关, 可以压缩空间
+		dp[i] = Max2(dp[i-1]+nums[i], nums[i])
+		if dp[i] > maxSum {
+			maxSum = dp[i]
+		}
+	}
+	return maxSum
+}
+
+func maxSubArrayDp2(nums []int) int {
+	maxSum := nums[0]
+	preSum := nums[0]
+	for i := 1; i < len(nums); i++ {
+		// dp[i] = max(加上当前元素, 以当前元素开始忽略之前的元素序列)
+		// 可以看到 dp[i] 只和 dp[i-1] 有关, 可以压缩空间
+		cur := Max2(preSum+nums[i], nums[i])
+		if cur > maxSum {
+			maxSum = cur
+		}
+		preSum = cur
+	}
+	return maxSum
+}
+
 func MaxSubArray(nums []int) int {
 	return maxSubArray(nums)
+}
+
+func MaxSubArrayDp(nums []int) int {
+	return maxSubArrayDp(nums)
+}
+
+func MaxSubArrayDp2(nums []int) int {
+	return maxSubArrayDp2(nums)
 }
