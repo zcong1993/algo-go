@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 12
+总计: 13
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -16,5 +16,6 @@
 | 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
 | 100174  | 简单 | [最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/)                                                       | [solve/solve100174](../solve/solve100174)   |
+| 100288  | 简单 | [二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/)                                                | [solve/solve100288](../solve/solve100288)   |
 | 100347  | 简单 | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)                         | [solve/solve100347](../solve/solve100347)   |
 | 1000019 | 简单 | [BiNode](https://leetcode-cn.com/problems/binode-lcci/)                                                                        | [solve/solve1000019](../solve/solve1000019) |
