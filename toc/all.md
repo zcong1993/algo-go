@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 30
+总计: 31
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -33,6 +33,7 @@
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
 | 1236    | 简单 | [第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)                                                  | [solve/solve1236](../solve/solve1236)       |
 | 1458    | 简单 | [根据数字二进制下 1 的数目排序](https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/)                       | [solve/solve1458](../solve/solve1458)       |
+| 100174  | 简单 | [最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/)                                                       | [solve/solve100174](../solve/solve100174)   |
 | 100304  | 简单 | [连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/)                                    | [solve/solve100304](../solve/solve100304)   |
 | 100347  | 简单 | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)                         | [solve/solve100347](../solve/solve100347)   |
 | 1000019 | 简单 | [BiNode](https://leetcode-cn.com/problems/binode-lcci/)                                                                        | [solve/solve1000019](../solve/solve1000019) |
