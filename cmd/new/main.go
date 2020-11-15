@@ -86,17 +86,16 @@ func Run(n string) {
 var codeStr = `package {{ .Folder }}
 
 /**
-@index {{ .Index }}
-@title {{ .Title }}
-@difficulty {{ .Difficulty }}
-@tags {{ .TagStr }}
-@draft false
-@link {{ .Link }}
-@frontendId {{ .FrontendId }}
+ * @index {{ .Index }}
+ * @title {{ .Title }}
+ * @difficulty {{ .Difficulty }}
+ * @tags {{ .TagStr }}
+ * @draft false
+ * @link {{ .Link }}
+ * @frontendId {{ .FrontendId }}
 */
-func solve() {
 
-}
+{{ .Code }}
 `
 
 var testCodeStr = `package %s

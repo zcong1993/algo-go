@@ -18,6 +18,7 @@ type Meta struct {
 	Tags       []string
 	Link       string
 	Content    string
+	Code       string
 }
 
 type Tag struct {
@@ -81,6 +82,7 @@ func getDetail(slug string) (*Meta, error) {
 		Tags:       tags,
 		Link:       fmt.Sprintf("https://leetcode-cn.com/problems/%s/", gjson.GetBytes(content, "data.question.titleSlug").String()),
 		Content:    gjson.GetBytes(content, "data.question.translatedContent").String(),
+		Code:       gjson.GetBytes(content, "data.question.codeSnippets.#(lang=Go).code").String(),
 	}, nil
 }
 

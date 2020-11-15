@@ -34,6 +34,7 @@ func showMeta(number string) {
 		log.Fatal(err)
 	}
 	meta.Content = ""
+	meta.Code = ""
 	fmt.Printf("%+v\n", meta)
 }
 
