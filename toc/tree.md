@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 14
+总计: 15
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -13,6 +13,7 @@
 | 538     | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)                                       | [solve/solve0538](../solve/solve0538)       |
 | 563     | 简单 | [二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt)                                                              | [solve/solve0563](../solve/solve0563)       |
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                     | [solve/solve0572](../solve/solve0572)       |
+| 617     | 简单 | [合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)                                                         | [solve/solve0617](../solve/solve0617)       |
 | 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
 | 100174  | 简单 | [最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/)                                                       | [solve/solve100174](../solve/solve100174)   |
