@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 15
+总计: 16
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -15,6 +15,7 @@
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                     | [solve/solve0572](../solve/solve0572)       |
 | 617     | 简单 | [合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)                                                         | [solve/solve0617](../solve/solve0617)       |
 | 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
+| 975     | 简单 | [二叉搜索树的范围和](https://leetcode-cn.com/problems/range-sum-of-bst/)                                                       | [solve/solve0975](../solve/solve0975)       |
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
 | 100174  | 简单 | [最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/)                                                       | [solve/solve100174](../solve/solve100174)   |
 | 100288  | 简单 | [二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/)                                                | [solve/solve100288](../solve/solve100288)   |

@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 34
+总计: 35
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -30,6 +30,7 @@
 | 617     | 简单 | [合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)                                                         | [solve/solve0617](../solve/solve0617)       |
 | 753     | 中等 | [打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)                                                                  | [solve/solve0753](../solve/solve0753)       |
 | 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
+| 975     | 简单 | [二叉搜索树的范围和](https://leetcode-cn.com/problems/range-sum-of-bst/)                                                       | [solve/solve0975](../solve/solve0975)       |
 | 978     | 简单 | [有效的山脉数组](https://leetcode-cn.com/problems/valid-mountain-array/)                                                       | [solve/solve0978](../solve/solve0978)       |
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
 | 1236    | 简单 | [第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)                                                  | [solve/solve1236](../solve/solve1236)       |
