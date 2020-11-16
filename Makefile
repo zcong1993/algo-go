@@ -7,7 +7,7 @@ format:
 .PHONY: format
 
 gen:
-	./bin/algo-go update
+	leetcode-tool update
 .PHONY: gen
 
 update: gen format
