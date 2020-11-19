@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 37
+总计: 38
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -11,6 +11,7 @@
 | 37      | 困难 | [解数独](https://leetcode-cn.com/problems/sudoku-solver/)                                                                      | [solve/solve0037](../solve/solve0037)       |
 | 46      | 中等 | [全排列](https://leetcode-cn.com/problems/permutations/)                                                                       | [solve/solve0046](../solve/solve0046)       |
 | 51      | 困难 | [N 皇后](https://leetcode-cn.com/problems/n-queens/)                                                                           | [solve/solve0051](../solve/solve0051)       |
+| 53      | 简单 | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)                                                               | [solve/solve0053](../solve/solve0053)       |
 | 57      | 困难 | [插入区间](https://leetcode-cn.com/problems/insert-interval/)                                                                  | [solve/solve0057](../solve/solve0057)       |
 | 77      | 中等 | [组合](https://leetcode-cn.com/problems/combinations/)                                                                         | [solve/solve0077](../solve/solve0077)       |
 | 102     | 中等 | [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)                                        | [solve/solve0102](../solve/solve0102)       |
