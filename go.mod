@@ -8,5 +8,6 @@ require (
 	github.com/bmatcuk/doublestar/v2 v2.0.3
 	github.com/stretchr/testify v1.6.1
 	github.com/tidwall/gjson v1.6.1
+	github.com/tj/assert v0.0.3
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )

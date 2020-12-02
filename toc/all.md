@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 38
+总计: 40
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -23,12 +23,14 @@
 | 322     | 中等 | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)                                                                      | [solve/solve0322](../solve/solve0322)       |
 | 327     | 困难 | [区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/)                                                           | [solve/solve0327](../solve/solve0327)       |
 | 349     | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                                                 | [solve/solve0349](../solve/solve0349)       |
+| 404     | 简单 | [左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)                                                             | [solve/solve0404](../solve/solve0404)       |
 | 449     | 中等 | [序列化和反序列化二叉搜索树](https://leetcode-cn.com/problems/serialize-and-deserialize-bst/)                                  | [solve/solve0449](../solve/solve0449)       |
 | 463     | 简单 | [岛屿的周长](https://leetcode-cn.com/problems/island-perimeter)                                                                | [solve/solve0463](../solve/solve0463)       |
 | 538     | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)                                       | [solve/solve0538](../solve/solve0538)       |
 | 563     | 简单 | [二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt)                                                              | [solve/solve0563](../solve/solve0563)       |
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                     | [solve/solve0572](../solve/solve0572)       |
 | 617     | 简单 | [合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)                                                         | [solve/solve0617](../solve/solve0617)       |
+| 747     | 简单 | [使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/)                                               | [solve/solve0747](../solve/solve0747)       |
 | 753     | 中等 | [打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)                                                                  | [solve/solve0753](../solve/solve0753)       |
 | 783     | 简单 | [二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)                                         | [solve/solve0783](../solve/solve0783)       |
 | 925     | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925)       |
