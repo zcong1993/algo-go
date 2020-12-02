@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 40
+总计: 41
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -17,6 +17,7 @@
 | 102     | 中等 | [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)                                        | [solve/solve0102](../solve/solve0102)       |
 | 105     | 中等 | [从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | [solve/solve0105](../solve/solve0105)       |
 | 106     | 中等 | [从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | [solve/solve0106](../solve/solve0106)       |
+| 111     | 简单 | [二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)                                             | [solve/solve0111](../solve/solve0111)       |
 | 122     | 简单 | [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)                                  | [solve/solve0122](../solve/solve0122)       |
 | 127     | 中等 | [单词接龙](https://leetcode-cn.com/problems/word-ladder/)                                                                      | [solve/solve0127](../solve/solve0127)       |
 | 198     | 简单 | [打家劫舍](https://leetcode-cn.com/problems/house-robber/)                                                                     | [solve/solve0198](../solve/solve0198)       |

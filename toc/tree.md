@@ -2,13 +2,14 @@
 
 <!--- table -->
 
-总计: 19
+总计: 20
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
 | 102     | 中等 | [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)                                        | [solve/solve0102](../solve/solve0102)       |
 | 105     | 中等 | [从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | [solve/solve0105](../solve/solve0105)       |
 | 106     | 中等 | [从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | [solve/solve0106](../solve/solve0106)       |
+| 111     | 简单 | [二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)                                             | [solve/solve0111](../solve/solve0111)       |
 | 404     | 简单 | [左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)                                                             | [solve/solve0404](../solve/solve0404)       |
 | 449     | 中等 | [序列化和反序列化二叉搜索树](https://leetcode-cn.com/problems/serialize-and-deserialize-bst/)                                  | [solve/solve0449](../solve/solve0449)       |
 | 538     | 中等 | [把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)                                       | [solve/solve0538](../solve/solve0538)       |
