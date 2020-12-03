@@ -20,3 +20,7 @@ test:
 build:
 	go build -o ./bin/algo-go ./cmd/main.go
 .PHONY: build
+
+test.new:
+	 untrack --folder -f "test" "go test -v -coverprofile=coverage.txt -covermode=atomic" | bash
+ .PHONY: test.new
