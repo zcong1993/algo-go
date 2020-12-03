@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 41
+总计: 42
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -40,6 +40,7 @@
 | 1050    | 中等 | [前序遍历构造二叉搜索树](https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/)               | [solve/solve1050](../solve/solve1050)       |
 | 1079    | 简单 | [从根到叶的二进制数之和](https://leetcode-cn.com/problems/sum-of-root-to-leaf-binary-numbers/)                                 | [solve/solve1079](../solve/solve1079)       |
 | 1236    | 简单 | [第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)                                                  | [solve/solve1236](../solve/solve1236)       |
+| 1250    | 中等 | [最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/)                                                 | [solve/solve1250](../solve/solve1250)       |
 | 1458    | 简单 | [根据数字二进制下 1 的数目排序](https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/)                       | [solve/solve1458](../solve/solve1458)       |
 | 100174  | 简单 | [最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/)                                                       | [solve/solve100174](../solve/solve100174)   |
 | 100288  | 简单 | [二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/)                                                | [solve/solve100288](../solve/solve100288)   |
