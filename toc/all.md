@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 43
+总计: 44
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -32,6 +32,7 @@
 | 572     | 简单 | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree)                                                     | [solve/solve0572](../solve/solve0572)       |
 | 583     | 中等 | [两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/)                                     | [solve/solve0583](../solve/solve0583)       |
 | 617     | 简单 | [合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)                                                         | [solve/solve0617](../solve/solve0617)       |
+| 712     | 中等 | [两个字符串的最小 ASCII 删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/)                    | [solve/solve0712](../solve/solve0712)       |
 | 747     | 简单 | [使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/)                                               | [solve/solve0747](../solve/solve0747)       |
 | 753     | 中等 | [打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)                                                                  | [solve/solve0753](../solve/solve0753)       |
 | 783     | 简单 | [二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)                                         | [solve/solve0783](../solve/solve0783)       |
