@@ -22,5 +22,5 @@ build:
 .PHONY: build
 
 test.new:
-	 untrack --folder -f "test" "go test -v -coverprofile=coverage.txt -covermode=atomic" | bash
+	 changed-files --folder -f "\.go$$" "go test -v -coverprofile=coverage.txt -covermode=atomic" | bash
  .PHONY: test.new
