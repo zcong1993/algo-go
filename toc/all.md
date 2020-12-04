@@ -2,7 +2,7 @@
 
 <!--- table -->
 
-总计: 44
+总计: 45
 
 | 序号    | 难度 | 题目                                                                                                                           | 解答                                        |
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
@@ -13,6 +13,7 @@
 | 51      | 困难 | [N 皇后](https://leetcode-cn.com/problems/n-queens/)                                                                           | [solve/solve0051](../solve/solve0051)       |
 | 53      | 简单 | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)                                                               | [solve/solve0053](../solve/solve0053)       |
 | 57      | 困难 | [插入区间](https://leetcode-cn.com/problems/insert-interval/)                                                                  | [solve/solve0057](../solve/solve0057)       |
+| 72      | 困难 | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)                                                                    | [solve/solve0072](../solve/solve0072)       |
 | 77      | 中等 | [组合](https://leetcode-cn.com/problems/combinations/)                                                                         | [solve/solve0077](../solve/solve0077)       |
 | 102     | 中等 | [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)                                        | [solve/solve0102](../solve/solve0102)       |
 | 105     | 中等 | [从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | [solve/solve0105](../solve/solve0105)       |
