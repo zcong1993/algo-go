@@ -7,6 +7,6 @@ require (
 	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
 	github.com/bmatcuk/doublestar/v2 v2.0.3
 	github.com/stretchr/testify v1.6.1
-	github.com/tidwall/gjson v1.6.1
+	github.com/tidwall/gjson v1.6.5
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
