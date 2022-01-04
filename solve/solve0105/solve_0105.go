@@ -3,41 +3,60 @@ package solve0105
 import . "github.com/zcong1993/algo-go/pkg/tree"
 
 /**
-@index 105
-@title 从前序与中序遍历序列构造二叉树
-@difficulty 中等
-@tags tree,depth-first-search,array
-@draft false
-@link https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-*/
+ * @index 105
+ * @title 从前序与中序遍历序列构造二叉树
+ * @difficulty 中等
+ * @tags tree,array,hash-table,divide-and-conquer,binary-tree
+ * @draft false
+ * @link https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+ * @frontendId 105
+ */
 
-// preorder [1,2,4,5,3,6,7]
-// inorder [4,2,5,1,6,3,7]
-// preorder 顺序为 根, 左子树, 右子树
-// inorder 顺序为 左子树, 根, 右子树
-// 先从 preorder 拿到根, 查询 inorder 就知道左子树的节点数, 就能分出来左右子树向下递归
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+// 1. 前序遍历 root 节点在头, 后序在尾
+// 2. 中序遍历 root 左右就是左右子树
+// 3. 根据 root 从中序遍历得到左子树长度
+// 4. 分割左右子树递归
+
 func BuildTree(preorder []int, inorder []int) *TreeNode {
-	if len(preorder) == 0 || len(inorder) == 0 || len(inorder) != len(preorder) {
+	if len(preorder) != len(inorder) || len(preorder) == 0 {
 		return nil
 	}
-	var build func(pStart, pEnd, iStart, iEnd int) *TreeNode
-	build = func(pStart, pEnd, iStart, iEnd int) *TreeNode {
-		if pStart > pEnd || iStart > iEnd {
+
+	l := len(preorder)
+
+	var build func(prStart, prEnd, inStart, inEnd int) *TreeNode
+	build = func(prStart, prEnd, inStart, inEnd int) *TreeNode {
+		if prStart > prEnd || inStart > inEnd {
 			return nil
 		}
-		rootVal := preorder[pStart]
+
+		rootVal := preorder[prStart]
 		root := &TreeNode{Val: rootVal}
-		index := -1
-		for i := iStart; i <= iEnd; i++ {
+
+		inIdx := -1
+		for i := inStart; i <= inEnd; i++ {
 			if inorder[i] == rootVal {
-				index = i
+				inIdx = i
 				break
 			}
 		}
-		leftSize := index - iStart
-		root.Left = build(pStart+1, pStart+leftSize, iStart, index-1)
-		root.Right = build(pStart+leftSize+1, pEnd, index+1, iEnd)
+
+		leftLen := inIdx - inStart
+
+		root.Left = build(prStart+1, prStart+leftLen, inStart, inIdx-1)
+		root.Right = build(prStart+leftLen+1, prEnd, inIdx+1, inEnd)
+
 		return root
 	}
-	return build(0, len(preorder)-1, 0, len(inorder)-1)
+
+	return build(0, l-1, 0, l-1)
 }

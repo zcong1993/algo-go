@@ -6,7 +6,7 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
  * @index 975
  * @title 二叉搜索树的范围和
  * @difficulty 简单
- * @tags tree,depth-first-search,recursion
+ * @tags tree,depth-first-search,binary-search-tree,binary-tree
  * @draft false
  * @link https://leetcode-cn.com/problems/range-sum-of-bst/
  * @frontendId 938
@@ -20,35 +20,66 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
  *     Right *TreeNode
  * }
  */
-func rangeSumBST(root *TreeNode, low int, high int) int {
+
+// 1. BST 中序有序
+// 2. 注意剪枝大于 high 的节点
+
+func RangeSumBST(root *TreeNode, low int, high int) int {
+	if root == nil || low > high {
+		return 0
+	}
+
 	sum := 0
-	var helper func(root *TreeNode)
-	helper = func(root *TreeNode) {
-		if root == nil {
+
+	var inorder func(node *TreeNode)
+	inorder = func(node *TreeNode) {
+		if node == nil {
 			return
 		}
-		// 当前节点在范围内, 更新结果
-		// 递归搜索左右子树
-		if root.Val >= low && root.Val <= high {
-			sum += root.Val
-			helper(root.Left)
-			helper(root.Right)
-		} else {
-			// 节点不在范围内, 由于是搜索树
-			// 所以可以排除一边子树
-			// 当前节点值小于最小搜索值时, 搜索右子树就可以了
-			if root.Val < low {
-				helper(root.Right)
-				// 当前节点值大于最大搜索值时, 搜索左子树
-			} else if root.Val > high {
-				helper(root.Left)
-			}
+
+		inorder(node.Left)
+
+		if node.Val >= low && node.Val <= high {
+			sum += node.Val
+		}
+
+		if node.Val <= high {
+			inorder(node.Right)
 		}
 	}
-	helper(root)
+
+	inorder(root)
 	return sum
 }
 
-func RangeSumBST(root *TreeNode, low int, high int) int {
-	return rangeSumBST(root, low, high)
+// 更好利用 BST 性质, 中序遍历, 更多剪枝
+// 可以直接放弃 < low || > high 的节点
+
+func RangeSumBST2(root *TreeNode, low int, high int) int {
+	if root == nil {
+		return 0
+	}
+
+	sum := 0
+	var preorder func(node *TreeNode)
+	preorder = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+
+		cur := node.Val
+
+		if cur >= low && cur <= high {
+			sum += cur
+			preorder(node.Left)
+			preorder(node.Right)
+		} else if cur < low {
+			preorder(node.Right)
+		} else if cur > high {
+			preorder(node.Left)
+		}
+	}
+
+	preorder(root)
+	return sum
 }

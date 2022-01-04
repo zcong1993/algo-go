@@ -26,10 +26,21 @@ const (
 )
 
 // 遍历树
+
 func Traversal(root *TreeNode, order Order) []int {
 	res := make([]int, 0)
 	if root == nil {
 		return res
+	}
+	TraversalWithFn(root, order, func(node *TreeNode) {
+		res = append(res, node.Val)
+	})
+	return res
+}
+
+func TraversalWithFn(root *TreeNode, order Order, fn func(node *TreeNode)) {
+	if root == nil {
+		return
 	}
 	var t func(root *TreeNode)
 	t = func(root *TreeNode) {
@@ -37,19 +48,18 @@ func Traversal(root *TreeNode, order Order) []int {
 			return
 		}
 		if order == PREORDER {
-			res = append(res, root.Val)
+			fn(root)
 		}
 		t(root.Left)
 		if order == INORDER {
-			res = append(res, root.Val)
+			fn(root)
 		}
 		t(root.Right)
 		if order == POSTORDER {
-			res = append(res, root.Val)
+			fn(root)
 		}
 	}
 	t(root)
-	return res
 }
 
 func int2string(i int) string {
@@ -65,6 +75,7 @@ func mustAtoi(str string) int {
 }
 
 // 序列化
+
 func Serialize(root *TreeNode) string {
 	if root == nil {
 		return EMPTY

@@ -1,16 +1,18 @@
-package solve0105
+package solve0105_test
 
 import (
 	"testing"
 
-	"github.com/zcong1993/algo-go/pkg/helper"
-
 	"github.com/stretchr/testify/assert"
+	"github.com/zcong1993/algo-go/pkg/helper"
 	"github.com/zcong1993/algo-go/pkg/tree"
+	"github.com/zcong1993/algo-go/solve/solve0105"
 )
 
 func TestBuildTree(t *testing.T) {
-	expected := "1,2,4,#,#,5,#,#,3,6,#,#,7,#,#"
-	root := BuildTree(helper.ArrFromJSON("[1,2,4,5,3,6,7]"), helper.ArrFromJSON("[4,2,5,1,6,3,7]"))
-	assert.Equal(t, expected, tree.Serialize(root))
+	pre := helper.ArrFromJSON(`[4,2,1,3,7,6,9]`)
+	ino := helper.ArrFromJSON(`[1,2,3,4,6,7,9]`)
+	expected := "4,2,1,#,#,3,#,#,7,6,#,#,9,#,#"
+
+	assert.Equal(t, expected, tree.Serialize(solve0105.BuildTree(pre, ino)))
 }

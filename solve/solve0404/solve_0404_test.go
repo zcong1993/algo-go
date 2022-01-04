@@ -9,6 +9,11 @@ import (
 )
 
 func TestSumOfLeftLeaves(t *testing.T) {
-	root := tree.Deserialize("3,9,#,#,20,15,#,#,7,#,#")
-	assert.Equal(t, 24, solve0404.SumOfLeftLeaves(root))
+	input := tree.Deserialize("3,9,#,#,20,15,#,#,7,#,#")
+	expected := 24
+	assert.Equal(t, expected, solve0404.SumOfLeftLeaves(input))
+
+	input = tree.Deserialize("3,#,#")
+	expected = 0
+	assert.Equal(t, expected, solve0404.SumOfLeftLeaves(input))
 }

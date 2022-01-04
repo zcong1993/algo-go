@@ -1,20 +1,25 @@
 package solve0001
 
 /**
-@index 1
-@title 两数之和
-@difficulty 简单
-@tags array,hash-table
-@draft false
-@link https://leetcode-cn.com/problems/two-sum
-*/
+ * @index 1
+ * @title 两数之和
+ * @difficulty 简单
+ * @tags array,hash-table
+ * @draft false
+ * @link https://leetcode-cn.com/problems/two-sum/
+ * @frontendId 1
+ */
+
 func TwoSum(nums []int, target int) []int {
-	mm := make(map[int]int, len(nums))
-	for idx, val := range nums {
-		if i, ok := mm[target-val]; ok {
-			return []int{i, idx}
+	mp := make(map[int]int, len(nums))
+
+	for i := 0; i < len(nums); i++ {
+		cur := nums[i]
+		if idx, ok := mp[target-cur]; ok {
+			return []int{idx, i}
 		}
-		mm[val] = idx
+		mp[cur] = i
 	}
+
 	return []int{}
 }

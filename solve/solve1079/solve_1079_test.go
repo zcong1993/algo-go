@@ -9,7 +9,11 @@ import (
 )
 
 func TestSumRootToLeaf(t *testing.T) {
-	root := tree.Deserialize("1,0,0,#,#,1,#,#,1,0,#,#,1,#,#")
-	assert.Equal(t, 22, solve1079.SumRootToLeaf(root))
-	assert.Equal(t, 0, solve1079.SumRootToLeaf(nil))
+	input := tree.Deserialize("1,0,0,#,#,1,#,#,1,0,#,#,1,#,#")
+	expected := 22
+	assert.Equal(t, expected, solve1079.SumRootToLeaf(input))
+
+	input = tree.Deserialize("1,1,#,#,#")
+	expected = 3
+	assert.Equal(t, expected, solve1079.SumRootToLeaf(input))
 }

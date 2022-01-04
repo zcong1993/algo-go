@@ -6,7 +6,7 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
  * @index 1079
  * @title 从根到叶的二进制数之和
  * @difficulty 简单
- * @tags tree
+ * @tags tree,depth-first-search,binary-tree
  * @draft false
  * @link https://leetcode-cn.com/problems/sum-of-root-to-leaf-binary-numbers/
  * @frontendId 1022
@@ -21,27 +21,32 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
  * }
  */
 
-func sumRootToLeaf(root *TreeNode) int {
-	sum := 0
-	var preorder func(root *TreeNode, parent int)
-	preorder = func(root *TreeNode, parent int) {
-		if root == nil {
-			return
-		}
-		// 每到下一层, 将 parent 和左移一位加上当前节点值
-		parent = parent<<1 + root.Val
-		// 如果是叶节点, 保存结果, 否则继续向下递归
-		if root.Left == nil && root.Right == nil {
-			sum += parent
-		} else {
-			preorder(root.Left, parent)
-			preorder(root.Right, parent)
-		}
-	}
-	preorder(root, 0)
-	return sum
-}
+// 1. 从根到叶所以需要前序遍历
+// 2. 不管是二进制还是十进制, 当前层都等于 prev * 进制 + cur
 
 func SumRootToLeaf(root *TreeNode) int {
-	return sumRootToLeaf(root)
+	if root == nil {
+		return 0
+	}
+
+	sum := 0
+
+	var preorder func(node *TreeNode, prev int)
+	preorder = func(node *TreeNode, prev int) {
+		if node == nil {
+			return
+		}
+
+		cur := prev*2 + node.Val
+
+		if node.Left == nil && node.Right == nil {
+			sum += cur
+		} else {
+			preorder(node.Left, cur)
+			preorder(node.Right, cur)
+		}
+	}
+
+	preorder(root, 0)
+	return sum
 }

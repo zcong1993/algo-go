@@ -1,32 +1,22 @@
-package solve0449
+package solve0449_test
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/zcong1993/algo-go/pkg/tree"
+	"github.com/zcong1993/algo-go/solve/solve0449"
 )
 
-func TestSerialize(t *testing.T) {
-	c := Constructor()
-	root := &tree.TreeNode{Val: 0}
-	root.Left = &tree.TreeNode{Val: 1}
-	root.Right = &tree.TreeNode{Val: 2}
-	root.Left.Left = &tree.TreeNode{Val: 3}
-	assert.Equal(t, "0,1,3,#,#,#,2,#,#", c.serialize(root))
-	assert.Equal(t, tree.EMPTY, c.serialize(nil))
+var testTreeStr = "4,2,1,#,#,3,#,#,7,6,#,#,9,#,#"
+var testTree = tree.Deserialize(testTreeStr)
+
+var c = solve0449.Constructor()
+
+func TestCodec_Serialize(t *testing.T) {
+	assert.Equal(t, testTreeStr, c.Serialize(testTree))
 }
 
-func TestDeserialize(t *testing.T) {
-	c := Constructor()
-	root := &tree.TreeNode{Val: 0}
-	root.Left = &tree.TreeNode{Val: 1}
-	root.Right = &tree.TreeNode{Val: 2}
-	root.Left.Left = &tree.TreeNode{Val: 3}
-	root.Right.Left = &tree.TreeNode{Val: 4}
-	str := c.serialize(root)
-	deTree := c.deserialize(str)
-	assert.True(t, tree.IsSameTree(root, deTree))
-	assert.Nil(t, c.deserialize(""))
-	assert.Nil(t, c.deserialize(tree.EMPTY))
+func TestCodec_Deserialize(t *testing.T) {
+	assert.True(t, tree.IsSameTree(testTree, c.Deserialize(testTreeStr)))
 }

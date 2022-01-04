@@ -3,22 +3,44 @@ package solve0572
 import . "github.com/zcong1993/algo-go/pkg/tree"
 
 /**
-@index 572
-@title 另一个树的子树
-@difficulty 简单
-@tags tree
-@draft false
-@link https://leetcode-cn.com/problems/subtree-of-another-tree
-*/
-func IsSubtree(s *TreeNode, t *TreeNode) bool {
-	// 两树都为空, true
-	if s == nil && t == nil {
+ * @index 572
+ * @title 另一棵树的子树
+ * @difficulty 简单
+ * @tags tree,depth-first-search,binary-tree,string-matching,hash-function
+ * @draft false
+ * @link https://leetcode-cn.com/problems/subtree-of-another-tree/
+ * @frontendId 572
+ */
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+func isSame(node1, node2 *TreeNode) bool {
+	if node1 == nil && node2 == nil {
 		return true
 	}
-	// 任意一个为空, false
-	if s == nil || t == nil {
+
+	if node1 == nil || node2 == nil || node1.Val != node2.Val {
 		return false
 	}
-	// 子树 = 两树相同 || t 为 s 左子树的子树 || t 为 s 右子树的子树
-	return IsSameTree(s, t) || IsSubtree(s.Left, t) || IsSubtree(s.Right, t)
+
+	return isSame(node1.Left, node2.Left) && isSame(node1.Right, node2.Right)
+}
+
+func IsSubtree(root *TreeNode, subRoot *TreeNode) bool {
+	if root == nil && subRoot == nil {
+		return true
+	}
+
+	if root == nil {
+		return false
+	}
+
+	return isSame(root, subRoot) || IsSubtree(root.Left, subRoot) || IsSubtree(root.Right, subRoot)
 }

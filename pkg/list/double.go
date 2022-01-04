@@ -1,9 +1,13 @@
 package list
 
 type Node struct {
-	Val  int
+	Val  interface{}
 	Next *Node
 	Prev *Node
+}
+
+func NewNode(val interface{}) *Node {
+	return &Node{Val: val}
 }
 
 type IDoubleList interface {
@@ -11,8 +15,8 @@ type IDoubleList interface {
 	Tail() *Node
 	AddFirst(node *Node)
 	AddLast(node *Node)
-	RemoveFirst()
-	RemoveLast()
+	RemoveFirst() *Node
+	RemoveLast() *Node
 	Remove(node *Node)
 	Size() int
 }
@@ -24,97 +28,65 @@ type DoubleList struct {
 }
 
 func NewDoubleList() *DoubleList {
+	head := &Node{Val: 0}
+	tail := &Node{Val: 0}
+	head.Next = tail
+	tail.Prev = head
 	return &DoubleList{
-		head: nil,
-		tail: nil,
+		head: head,
+		tail: tail,
 		s:    0,
 	}
 }
 
 func (dl *DoubleList) Head() *Node {
-	return dl.head
+	if dl.s == 0 {
+		return nil
+	}
+	return dl.head.Next
 }
 
 func (dl *DoubleList) Tail() *Node {
-	return dl.tail
+	if dl.s == 0 {
+		return nil
+	}
+	return dl.tail.Prev
 }
 
 func (dl *DoubleList) AddFirst(node *Node) {
-	if dl.s == 0 {
-		dl.head = node
-		dl.tail = node
-		dl.s = 1
-		return
-	}
-	dl.head.Prev = node
-	node.Next = dl.head
-	dl.head = node
+	node.Next = dl.head.Next
+	node.Prev = dl.head
+	dl.head.Next.Prev = node
+	dl.head.Next = node
 	dl.s++
 }
 
 func (dl *DoubleList) AddLast(node *Node) {
-	if dl.s == 0 {
-		dl.head = node
-		dl.tail = node
-		dl.s = 1
-		return
-	}
-	dl.tail.Next = node
-	node.Prev = dl.tail
-	dl.tail = node
+	node.Prev = dl.tail.Prev
+	node.Next = dl.tail
+	dl.tail.Prev.Next = node
+	dl.tail.Prev = node
 	dl.s++
 }
 
-func (dl *DoubleList) RemoveFirst() {
-	if dl.s == 0 {
-		return
-	}
-	if dl.s == 1 {
-		dl.head = nil
-		dl.tail = nil
-		dl.s = 0
-		return
-	}
-	if dl.head.Next != nil {
-		dl.head.Next.Prev = nil
-	}
-	dl.head = dl.head.Next
-	dl.s--
+func (dl *DoubleList) RemoveFirst() *Node {
+	head := dl.Head()
+	dl.Remove(head)
+	return head
 }
 
-func (dl *DoubleList) RemoveLast() {
-	if dl.s == 0 {
-		return
-	}
-	if dl.s == 1 {
-		dl.head = nil
-		dl.tail = nil
-		dl.s = 0
-		return
-	}
-	if dl.tail.Prev != nil {
-		dl.tail.Prev.Next = nil
-	}
-	dl.tail = dl.tail.Prev
-	dl.s--
+func (dl *DoubleList) RemoveLast() *Node {
+	tail := dl.Tail()
+	dl.Remove(tail)
+	return tail
 }
 
 func (dl *DoubleList) Remove(node *Node) {
 	if node == nil || dl.s == 0 {
 		return
 	}
-	if dl.s == 1 && node == dl.head {
-		dl.head = nil
-		dl.tail = nil
-		dl.s = 0
-		return
-	}
-	if node.Next != nil {
-		node.Next.Prev = node.Prev
-	}
-	if node.Prev != nil {
-		node.Prev.Next = node.Next
-	}
+	node.Prev.Next = node.Next
+	node.Next.Prev = node.Prev
 	dl.s--
 }
 
@@ -122,14 +94,16 @@ func (dl *DoubleList) Size() int {
 	return dl.s
 }
 
-func (dl *DoubleList) Inspect() []int {
-	res := make([]int, dl.s)
+func (dl *DoubleList) Inspect() []interface{} {
+	res := make([]interface{}, dl.s)
 	i := 0
-	cur := dl.head
-	for cur != nil {
+	cur := dl.Head()
+	for i < dl.s {
 		res[i] = cur.Val
 		cur = cur.Next
 		i++
 	}
 	return res
 }
+
+var _ IDoubleList = &DoubleList{}

@@ -1,93 +1,95 @@
 package solve0051
 
-import "strings"
-
 /**
-@index 51
-@title N 皇后
-@difficulty 困难
-@tags backtracking
-@draft false
-@link https://leetcode-cn.com/problems/n-queens/
-@frontendId 51
-*/
+ * @index 51
+ * @title N 皇后
+ * @difficulty 困难
+ * @tags array,backtracking
+ * @draft false
+ * @link https://leetcode-cn.com/problems/n-queens/
+ * @frontendId 51
+ */
 
 const (
-	EMPTY = "."
-	QUEEN = "Q"
+	EMPTY = '.'
+	QUEEN = 'Q'
 )
 
-func solveNQueens(n int) [][]string {
-	board := makeBoard(n)
-	res := make([][]string, 0)
-	var backtrack func(m int)
-	backtrack = func(m int) {
-		// 到底了, 保存结果
-		if m == n {
-			res = append(res, toRes(board))
-			return
-		}
-		// 尝试往当前行每个格子防止皇后
-		for j := 0; j < n; j++ {
-			// 不符合要求, 跳过
-			if !isValid(board, m, j) {
-				continue
-			}
-			// 放置皇后
-			board[m][j] = QUEEN
-			// 回溯
-			backtrack(m + 1)
-			// 撤销选择
-			board[m][j] = EMPTY
-		}
+func makeBoard(n int) [][]byte {
+	res := make([][]byte, n)
+	line := make([]byte, n)
+	for i := range line {
+		line[i] = EMPTY
 	}
-	backtrack(0)
+	res[0] = line
+	for i := 1; i < n; i++ {
+		tmp := make([]byte, n)
+		copy(tmp, line)
+		res[i] = tmp
+	}
 	return res
 }
 
-func isValid(board [][]string, m, n int) bool {
+func copyBoard(board [][]byte) []string {
 	l := len(board)
+	res := make([]string, l)
 	for i := 0; i < l; i++ {
-		if board[m][i] == QUEEN || board[i][n] == QUEEN {
-			return false
-		}
-	}
-	// 向下回溯, 只检查上方, 因为下方还没有元素
-	// 右上 i-- j++
-	for i, j := m-1, n+1; i >= 0 && j < l; i, j = i-1, j+1 {
-		if board[i][j] == QUEEN {
-			return false
-		}
-	}
-	// 左上 i-- j--
-	for i, j := m-1, n-1; i >= 0 && j >= 0; i, j = i-1, j-1 {
-		if board[i][j] == QUEEN {
-			return false
-		}
-	}
-	return true
-}
-
-func makeBoard(n int) [][]string {
-	res := make([][]string, n)
-	for i := 0; i < n; i++ {
-		line := make([]string, n)
-		for j := 0; j < n; j++ {
-			line[j] = EMPTY
-		}
+		line := string(board[i])
 		res[i] = line
 	}
 	return res
 }
 
-func toRes(board [][]string) []string {
-	res := make([]string, len(board))
-	for i := 0; i < len(board); i++ {
-		res[i] = strings.Join(board[i], "")
+func isValid(board [][]byte, row, col int) bool {
+	l := len(board)
+	// 上
+	for i := 0; i < row; i++ {
+		if board[i][col] == QUEEN {
+			return false
+		}
 	}
-	return res
+	// 右上
+	for i, j := row-1, col+1; i >= 0 && j < l; i, j = i-1, j+1 {
+		if board[i][j] == QUEEN {
+			return false
+		}
+	}
+	// 左上
+	for i, j := row-1, col-1; i >= 0 && j >= 0; i, j = i-1, j-1 {
+		if board[i][j] == QUEEN {
+			return false
+		}
+	}
+
+	return true
 }
 
 func SolveNQueens(n int) [][]string {
-	return solveNQueens(n)
+	if n == 0 {
+		return nil
+	}
+
+	var res [][]string
+
+	board := makeBoard(n)
+
+	var backtrack func(row int)
+	backtrack = func(row int) {
+		if row == len(board) {
+			res = append(res, copyBoard(board))
+			return
+		}
+		for i := 0; i < len(board); i++ {
+			if !isValid(board, row, i) {
+				continue
+			}
+			board[row][i] = QUEEN
+			backtrack(row + 1)
+			board[row][i] = EMPTY
+		}
+	}
+
+	backtrack(0)
+
+	return res
 }

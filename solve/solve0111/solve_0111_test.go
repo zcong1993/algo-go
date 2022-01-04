@@ -9,14 +9,11 @@ import (
 )
 
 func TestMinDepth(t *testing.T) {
-	root1 := tree.Deserialize("3,9,#,#,20,15,#,#,7,#,#")
-	assert.Equal(t, 2, solve0111.MinDepth(root1))
+	input := tree.Deserialize("2,#,3,#,4,#,#")
+	expected := 3
+	assert.Equal(t, expected, solve0111.MinDepth(input))
 
-	root2 := tree.Deserialize("3,#,2,#,#")
-	assert.Equal(t, 2, solve0111.MinDepth(root2))
-
-	root3 := tree.Deserialize("3,2,#,#,#")
-	assert.Equal(t, 2, solve0111.MinDepth(root3))
-
-	assert.Equal(t, 0, solve0111.MinDepth(nil))
+	input = tree.Deserialize("3,9,#,#,20,15,#,#,7,#,#")
+	expected = 2
+	assert.Equal(t, expected, solve0111.MinDepth(input))
 }

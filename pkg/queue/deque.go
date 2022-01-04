@@ -9,13 +9,13 @@ import (
 var ErrNotExists = errors.New("not exists")
 
 type IDeQueue interface {
-	AddFirst(data int)
-	AddLast(data int)
-	PollFirst() (int, error)
-	PollLast() (int, error)
-	PeekFirst() (int, error)
-	PeekLast() (int, error)
-	Size() int
+	AddFirst(data interface{})
+	AddLast(data interface{})
+	PollFirst() (interface{}, error)
+	PollLast() (interface{}, error)
+	PeekFirst() (interface{}, error)
+	PeekLast() (interface{}, error)
+	Size() interface{}
 }
 
 type DeQueue struct {
@@ -26,15 +26,15 @@ func NewDeQueue() *DeQueue {
 	return &DeQueue{ll: list.NewDoubleList()}
 }
 
-func (q *DeQueue) AddFirst(data int) {
+func (q *DeQueue) AddFirst(data interface{}) {
 	q.ll.AddFirst(&list.Node{Val: data})
 }
 
-func (q *DeQueue) AddLast(data int) {
+func (q *DeQueue) AddLast(data interface{}) {
 	q.ll.AddLast(&list.Node{Val: data})
 }
 
-func (q *DeQueue) PollFirst() (int, error) {
+func (q *DeQueue) PollFirst() (interface{}, error) {
 	first := q.ll.Head()
 	if first == nil {
 		return -1, ErrNotExists
@@ -43,7 +43,7 @@ func (q *DeQueue) PollFirst() (int, error) {
 	return first.Val, nil
 }
 
-func (q *DeQueue) PollLast() (int, error) {
+func (q *DeQueue) PollLast() (interface{}, error) {
 	last := q.ll.Tail()
 	if last == nil {
 		return -1, ErrNotExists
@@ -52,7 +52,7 @@ func (q *DeQueue) PollLast() (int, error) {
 	return last.Val, nil
 }
 
-func (q *DeQueue) PeekFirst() (int, error) {
+func (q *DeQueue) PeekFirst() (interface{}, error) {
 	first := q.ll.Head()
 	if first == nil {
 		return -1, ErrNotExists
@@ -60,7 +60,7 @@ func (q *DeQueue) PeekFirst() (int, error) {
 	return first.Val, nil
 }
 
-func (q *DeQueue) PeekLast() (int, error) {
+func (q *DeQueue) PeekLast() (interface{}, error) {
 	last := q.ll.Tail()
 	if last == nil {
 		return -1, ErrNotExists
@@ -68,6 +68,8 @@ func (q *DeQueue) PeekLast() (int, error) {
 	return last.Val, nil
 }
 
-func (q *DeQueue) Size() int {
+func (q *DeQueue) Size() interface{} {
 	return q.ll.Size()
 }
+
+var _ IDeQueue = &DeQueue{}

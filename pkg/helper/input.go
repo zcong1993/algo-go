@@ -9,9 +9,23 @@ func ArrFromJSON(input string) []int {
 	return res
 }
 
+// ArrFromJSONString json str -> []string
+func ArrFromJSONString(input string) []string {
+	var res []string
+	_ = json.Unmarshal([]byte(input), &res)
+	return res
+}
+
 // GridFromJSON json str -> [][]int
 func GridFromJSON(input string) [][]int {
 	var grid [][]int
+	_ = json.Unmarshal([]byte(input), &grid)
+	return grid
+}
+
+// GridFromJSONString json str -> [][]string
+func GridFromJSONString(input string) [][]string {
+	var grid [][]string
 	_ = json.Unmarshal([]byte(input), &grid)
 	return grid
 }

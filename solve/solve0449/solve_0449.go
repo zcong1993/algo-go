@@ -1,7 +1,6 @@
 package solve0449
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -9,76 +8,107 @@ import (
 )
 
 /**
-@index 449
-@title 序列化和反序列化二叉搜索树
-@difficulty 中等
-@tags tree
-@draft false
-@link https://leetcode-cn.com/problems/serialize-and-deserialize-bst/
-*/
+ * @index 449
+ * @title 序列化和反序列化二叉搜索树
+ * @difficulty 中等
+ * @tags tree,depth-first-search,breadth-first-search,design,binary-search-tree,string,binary-tree
+ * @draft false
+ * @link https://leetcode-cn.com/problems/serialize-and-deserialize-bst/
+ * @frontendId 449
+ */
 
-type Codec struct {
-}
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+const (
+	empty = "#"
+	step  = ","
+)
+
+type Codec struct{}
 
 func Constructor() Codec {
 	return Codec{}
 }
 
-// Serializes a tree to a single string.
-func (c *Codec) serialize(root *TreeNode) string {
-	if root == nil {
-		return EMPTY
-	}
-	sb := strings.Builder{}
-	var preorder func(root *TreeNode)
-	preorder = func(root *TreeNode) {
-		if root == nil {
-			sb.WriteString(EMPTY)
-			sb.WriteString(STEP)
-			return
-		}
-		sb.WriteString(int2string(root.Val))
-		sb.WriteString(STEP)
-		preorder(root.Left)
-		preorder(root.Right)
-	}
-	preorder(root)
-	return strings.TrimSuffix(sb.String(), STEP)
-}
-
-// Deserializes your encoded data to tree.
-func (c *Codec) deserialize(str string) *TreeNode {
-	if str == "" || str == EMPTY {
-		return nil
-	}
-	nodes := strings.Split(str, STEP)
-	index := 0
-	var helper func() *TreeNode
-	helper = func() *TreeNode {
-		if index > len(nodes)-1 {
-			return nil
-		}
-		last := nodes[index]
-		index++
-		if last == EMPTY {
-			return nil
-		}
-		root := &TreeNode{Val: mustAtoi(last)}
-		root.Left = helper()
-		root.Right = helper()
-		return root
-	}
-	return helper()
-}
-
-func int2string(i int) string {
-	return fmt.Sprintf("%d", i)
-}
-
-func mustAtoi(str string) int {
-	i, err := strconv.Atoi(str)
+func mustAtoi(s string) int {
+	in, err := strconv.Atoi(s)
 	if err != nil {
 		panic(err)
 	}
-	return i
+	return in
 }
+
+// Serializes a tree to a single string.
+func (this *Codec) Serialize(root *TreeNode) string {
+	res := strings.Builder{}
+
+	if root == nil {
+		return empty
+	}
+
+	var pre func(node *TreeNode)
+	pre = func(node *TreeNode) {
+		if node == nil {
+			res.WriteString(empty)
+			res.WriteString(step)
+			return
+		}
+
+		res.WriteString(strconv.Itoa(node.Val))
+		res.WriteString(step)
+
+		pre(node.Left)
+		pre(node.Right)
+	}
+
+	pre(root)
+
+	return strings.TrimSuffix(res.String(), step)
+}
+
+// Deserializes your encoded data to tree.
+func (this *Codec) Deserialize(data string) *TreeNode {
+	if len(data) == 0 || data == empty {
+		return nil
+	}
+
+	arr := strings.Split(data, step)
+	i := 0
+
+	var build func() *TreeNode
+	build = func() *TreeNode {
+		if i >= len(arr) {
+			return nil
+		}
+		last := arr[i]
+		i++
+
+		if last == empty {
+			return nil
+		}
+
+		root := &TreeNode{Val: mustAtoi(last)}
+		root.Left = build()
+		root.Right = build()
+
+		return root
+	}
+
+	return build()
+}
+
+/**
+ * Your Codec object will be instantiated and called as such:
+ * ser := Constructor()
+ * deser := Constructor()
+ * tree := ser.serialize(root)
+ * ans := deser.deserialize(tree)
+ * return ans
+ */
