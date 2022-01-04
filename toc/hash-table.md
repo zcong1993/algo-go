@@ -16,6 +16,6 @@
 | 142      | 142  | 中等 | [环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)                                                          | [solve/solve0142](../solve/solve0142) |
 | 146      | 146  | 中等 | [LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/)                                                                    | [solve/solve0146](../solve/solve0146) |
 | 160      | 160  | 简单 | [相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)                                                 | [solve/solve0160](../solve/solve0160) |
-|          | 349  | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                                                 | [solve/solve0349](../solve/solve0349) |
+| 349      | 349  | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                                                 | [solve/solve0349](../solve/solve0349) |
 | 752      | 753  | 中等 | [打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)                                                                  | [solve/solve0753](../solve/solve0753) |
 | 889      | 925  | 中等 | [根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | [solve/solve0925](../solve/solve0925) |

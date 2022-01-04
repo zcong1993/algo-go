@@ -1,16 +1,23 @@
 default: update
 .PHONY: default
 
-format:
+gfmt:
 	go fmt ./... && goimports -l -w . && go vet ./...
+.PHONY: gfmt
+
+format.new: gfmt
 	changed-files -f "\.md$$" "prettier --write" | bash
-.PHONY: format
+.PHONY: format.new
+
+format.all: gfmt
+	prettier --write "**/*.md"
+.PHONY: format.all
 
 gen:
 	leetcode-tool update
 .PHONY: gen
 
-update: gen format
+update: gen format.new
 .PHONY: update
 
 test:

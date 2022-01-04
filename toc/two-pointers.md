@@ -15,5 +15,5 @@
 | 143      | 143  | 中等 | [重排链表](https://leetcode-cn.com/problems/reorder-list/)                                      | [solve/solve0143](../solve/solve0143) |
 | 160      | 160  | 简单 | [相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)                  | [solve/solve0160](../solve/solve0160) |
 | 234      | 234  | 简单 | [回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/)                            | [solve/solve0234](../solve/solve0234) |
-|          | 349  | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                  | [solve/solve0349](../solve/solve0349) |
+| 349      | 349  | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                  | [solve/solve0349](../solve/solve0349) |
 | 876      | 908  | 简单 | [链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)                   | [solve/solve0908](../solve/solve0908) |

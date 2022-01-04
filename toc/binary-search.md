@@ -11,5 +11,5 @@
 | 69       | 69   | 简单 | [Sqrt(x)](https://leetcode-cn.com/problems/sqrtx/)                                                                                      | [solve/solve0069](../solve/solve0069) |
 | 300      | 300  | 中等 | [最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)                                                      | [solve/solve0300](../solve/solve0300) |
 | 327      | 327  | 困难 | [区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/)                                                                    | [solve/solve0327](../solve/solve0327) |
-|          | 349  | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                                                          | [solve/solve0349](../solve/solve0349) |
+| 349      | 349  | 简单 | [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)                                                          | [solve/solve0349](../solve/solve0349) |
 | 704      | 792  | 简单 | [二分查找](https://leetcode-cn.com/problems/binary-search/)                                                                             | [solve/solve0792](../solve/solve0792) |

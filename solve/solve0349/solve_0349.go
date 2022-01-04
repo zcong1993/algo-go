@@ -1,13 +1,15 @@
 package solve0349
 
 /**
-@index 349
-@title 两个数组的交集
-@difficulty 简单
-@tags sort,hash-table,two-pointers,binary-search
-@draft false
-@link https://leetcode-cn.com/problems/intersection-of-two-arrays/
-*/
+ * @index 349
+ * @title 两个数组的交集
+ * @difficulty 简单
+ * @tags array,hash-table,two-pointers,binary-search,sorting
+ * @draft false
+ * @link https://leetcode-cn.com/problems/intersection-of-two-arrays/
+ * @frontendId 349
+ */
+
 func Intersection(nums1 []int, nums2 []int) []int {
 	mm := make(map[int]struct{}, len(nums1))
 	for _, n := range nums1 {
