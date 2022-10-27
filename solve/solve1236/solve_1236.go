@@ -1,13 +1,14 @@
 package solve1236
 
-/**
+/*
+*
 @index 1236
 @title 第 N 个泰波那契数
 @difficulty 简单
 @tags recursion
 @draft false
 @link https://leetcode-cn.com/problems/n-th-tribonacci-number/
-@frontendId 1137
+@frontendId 1137.
 */
 func Tribonacci(n int) int {
 	if n == 0 {

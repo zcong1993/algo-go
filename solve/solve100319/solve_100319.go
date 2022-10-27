@@ -21,7 +21,7 @@ import (
  *     Val int
  *     Left *TreeNode
  *     Right *TreeNode
- * }
+ * }.
  */
 func maxDepth(root *TreeNode) int {
 	var postOrder func(root *TreeNode) int

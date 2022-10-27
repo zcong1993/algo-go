@@ -1,13 +1,14 @@
 package solve0022
 
-/**
+/*
+*
 @index 22
 @title 括号生成
 @difficulty 中等
 @tags string,backtracking
 @draft false
 @link https://leetcode-cn.com/problems/generate-parentheses/
-@frontendId 22
+@frontendId 22.
 */
 func generateParenthesis(n int) []string {
 	res := make([]string, 0)

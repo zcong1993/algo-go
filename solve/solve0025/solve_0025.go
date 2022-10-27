@@ -22,7 +22,7 @@ import (
  * }
  */
 
-// reverse 翻转 [head, end) 之间的链表
+// reverse 翻转 [head, end) 之间的链表.
 func reverse(head, end *ListNode) *ListNode {
 	var prev *ListNode
 	cur := head

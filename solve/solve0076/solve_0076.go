@@ -33,7 +33,7 @@ func MinWindow(s string, t string) string {
 	}
 	window := make(mp, len(t))
 	need := make(mp, len(t))
-	for i, _ := range t {
+	for i := range t {
 		need.addCount(t[i], 1)
 	}
 

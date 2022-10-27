@@ -2,14 +2,15 @@ package solve0057
 
 import . "github.com/zcong1993/algo-go/pkg/helper"
 
-/**
+/*
+*
 @index 57
 @title 插入区间
 @difficulty 困难
 @tags sort,array
 @draft false
 @link https://leetcode-cn.com/problems/insert-interval/
-@frontendId 57
+@frontendId 57.
 */
 func insert(intervals [][]int, newInterval []int) [][]int {
 	newL, newR := newInterval[0], newInterval[1]

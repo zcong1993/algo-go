@@ -8,8 +8,10 @@ import (
 	"github.com/zcong1993/algo-go/solve/solve0449"
 )
 
-var testTreeStr = "4,2,1,#,#,3,#,#,7,6,#,#,9,#,#"
-var testTree = tree.Deserialize(testTreeStr)
+var (
+	testTreeStr = "4,2,1,#,#,3,#,#,7,6,#,#,9,#,#"
+	testTree    = tree.Deserialize(testTreeStr)
+)
 
 var c = solve0449.Constructor()
 

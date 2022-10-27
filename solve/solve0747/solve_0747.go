@@ -28,7 +28,7 @@ func minCostClimbingStairs(cost []int) int {
 	return Min2(dp[len(cost)-2], dp[len(cost)-1])
 }
 
-// 压缩空间
+// 压缩空间.
 func MinCostClimbingStairs2(cost []int) int {
 	prev2, prev1 := cost[0], cost[1]
 	for i := 2; i < len(cost); i++ {

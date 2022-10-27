@@ -1,13 +1,14 @@
 package solve0327
 
-/**
+/*
+*
 @index 327
 @title 区间和的个数
 @difficulty 困难
 @tags sort,binary-indexed-tree,segment-tree,binary-search,divide-and-conquer
 @draft false
 @link https://leetcode-cn.com/problems/count-of-range-sum/
-@frontendId 327
+@frontendId 327.
 */
 func countRangeSum(nums []int, lower int, upper int) int {
 	preSum := make([]int, len(nums)+1)

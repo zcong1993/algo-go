@@ -3,9 +3,8 @@ package solve0349
 import (
 	"testing"
 
-	"github.com/zcong1993/algo-go/pkg/helper"
-
 	"github.com/stretchr/testify/assert"
+	"github.com/zcong1993/algo-go/pkg/helper"
 )
 
 func TestIntersection(t *testing.T) {

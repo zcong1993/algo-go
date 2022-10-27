@@ -1,13 +1,14 @@
 package solve0978
 
-/**
+/*
+*
 @index 978
 @title 有效的山脉数组
 @difficulty 简单
 @tags array
 @draft false
 @link https://leetcode-cn.com/problems/valid-mountain-array/
-@frontendId 941
+@frontendId 941.
 */
 func ValidMountainArray(A []int) bool {
 	if len(A) == 0 {

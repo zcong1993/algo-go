@@ -1,13 +1,14 @@
 package solve0127
 
-/**
+/*
+*
 @index 127
 @title 单词接龙
 @difficulty 中等
 @tags breadth-first-search
 @draft false
 @link https://leetcode-cn.com/problems/word-ladder/
-@frontendId 127
+@frontendId 127.
 */
 func ladderLength(beginWord string, endWord string, wordList []string) int {
 	if !(contains(endWord, wordList)) {

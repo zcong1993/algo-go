@@ -2,14 +2,15 @@ package solve0198
 
 import . "github.com/zcong1993/algo-go/pkg/helper"
 
-/**
+/*
+*
 @index 198
 @title 打家劫舍
 @difficulty 简单
 @tags dynamic-programming
 @draft false
 @link https://leetcode-cn.com/problems/house-robber/
-@frontendId 198
+@frontendId 198.
 */
 func rob(nums []int) int {
 	// 从 start 开始打劫最大利润

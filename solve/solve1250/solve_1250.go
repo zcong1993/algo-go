@@ -12,7 +12,7 @@ import . "github.com/zcong1993/algo-go/pkg/helper"
  * @frontendId 1143
  */
 
-// 递归方法
+// 递归方法.
 func longestCommonSubsequence(text1 string, text2 string) int {
 	// func(i, j int) 表示 text1[i:] text2[j:] 最长公共子序列
 	var dp func(i, j int) int
@@ -33,7 +33,7 @@ func longestCommonSubsequence(text1 string, text2 string) int {
 	return dp(0, 0)
 }
 
-// 备忘录
+// 备忘录.
 func longestCommonSubsequence2(text1 string, text2 string) int {
 	mm := make([][]int, len(text1))
 	for i := range mm {
@@ -59,7 +59,7 @@ func longestCommonSubsequence2(text1 string, text2 string) int {
 	return dp(0, 0)
 }
 
-// dp
+// dp.
 func longestCommonSubsequence3(text1 string, text2 string) int {
 	dp := make([][]int, len(text1)+1)
 	for i := range dp {

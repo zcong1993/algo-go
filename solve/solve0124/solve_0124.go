@@ -22,7 +22,7 @@ import (
  *     Val int
  *     Left *TreeNode
  *     Right *TreeNode
- * }
+ * }.
  */
 func max(x, y int) int {
 	if x > y {

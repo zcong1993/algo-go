@@ -20,13 +20,13 @@ jobs:
     timeout-minutes: 10
     steps:
     - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Go
       uses: actions/setup-go@master
       with:
-        go-version: 1.17
-    - uses: actions/cache@v2
+        go-version: 1.19
+    - uses: actions/cache@v3
       with:
         path: |
           ~/.cache/go-build
@@ -34,9 +34,18 @@ jobs:
         key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
         restore-keys: |
           ${{ runner.os }}-go-
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ./bin
+        key: ${{ runner.os }}-bin-${{ hashFiles('**/Makefile') }}
+        restore-keys: |
+          ${{ runner.os }}-bin
+    - name: lint
+      run: make lint
 
     - name: Test
       run: go test -v -coverprofile=coverage.txt -covermode=atomic ./...
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v3
       with:
         file: ./coverage.txt # optional

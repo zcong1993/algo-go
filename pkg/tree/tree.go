@@ -97,7 +97,7 @@ func Serialize(root *TreeNode) string {
 	return strings.TrimSuffix(sb.String(), STEP)
 }
 
-// 反序列化
+// 反序列化.
 func Deserialize(str string) *TreeNode {
 	if str == "" || str == EMPTY {
 		return nil
@@ -122,7 +122,7 @@ func Deserialize(str string) *TreeNode {
 	return helper()
 }
 
-// 判断两棵树是否相同
+// 判断两棵树是否相同.
 func IsSameTree(root1, root2 *TreeNode) bool {
 	// 两树都为空, true
 	if root1 == nil && root2 == nil {

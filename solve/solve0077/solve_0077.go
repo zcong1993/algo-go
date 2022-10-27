@@ -1,13 +1,14 @@
 package solve0077
 
-/**
+/*
+*
 @index 77
 @title 组合
 @difficulty 中等
 @tags backtracking
 @draft false
 @link https://leetcode-cn.com/problems/combinations/
-@frontendId 77
+@frontendId 77.
 */
 func combine(n int, k int) [][]int {
 	res := make([][]int, 0)

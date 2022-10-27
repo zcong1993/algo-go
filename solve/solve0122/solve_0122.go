@@ -12,7 +12,7 @@ import "github.com/zcong1993/algo-go/pkg/helper"
 @frontendId 122
 */
 
-// 贪心算法
+// 贪心算法.
 func maxProfit(prices []int) int {
 	if len(prices) <= 1 {
 		return 0
@@ -32,7 +32,7 @@ func maxProfit(prices []int) int {
 // dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i])
 // dp[i][0] i 天手里没股票: 1. 上一天没股票, 今天啥都不干 2. 昨天买了, 今天卖了
 // dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
-// base case dp[0][0] = 0 没操作 dp[0][1] = -prices[0] 第一天买了
+// base case dp[0][0] = 0 没操作 dp[0][1] = -prices[0] 第一天买了.
 func maxProfitDp(prices []int) int {
 	n := len(prices)
 	if n <= 1 {

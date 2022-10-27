@@ -3,9 +3,8 @@ package solve0463
 import (
 	"testing"
 
-	"github.com/zcong1993/algo-go/pkg/helper"
-
 	"github.com/stretchr/testify/assert"
+	"github.com/zcong1993/algo-go/pkg/helper"
 )
 
 func TestIslandPerimeter(t *testing.T) {

@@ -18,7 +18,7 @@ import . "github.com/zcong1993/algo-go/pkg/tree"
  *     Val int
  *     Left *TreeNode
  *     Right *TreeNode
- * }
+ * }.
  */
 func sortedArrayToBST(nums []int) *TreeNode {
 	var helper func(l, h int) *TreeNode

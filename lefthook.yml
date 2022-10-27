@@ -1,0 +1,9 @@
+pre-commit:
+  commands:
+    format:
+      glob: "*.go"
+      run: ./bin/goimports -l -w {staged_files} && git add {staged_files}
+    lint:
+      glob: "*.go"
+      # consume {staged_files} so this command will trigger only when any *.go changed
+      run: make lint && git add {staged_files}
