@@ -6,6 +6,7 @@ on:
     paths:
       - 'pkg/**'
       - 'solve/**'
+      - '.github/workflows/go.yml'
   pull_request:
     branches: [ master ]
     paths:
